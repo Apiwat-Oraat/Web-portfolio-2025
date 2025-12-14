@@ -5,6 +5,8 @@ import { SectionName } from "@/components/NavMenu";
 import TypingIntro from "@/components/TypingIntro";
 import RightSide from "@/components/RightSide";
 import LeftSide from "@/components/LeftSide";
+// import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
+import Background3D from "@/components/Background3D";
 
 export default function Page() {
   const [slideOut, setSlideOut] = useState<boolean>(false);
@@ -55,18 +57,11 @@ export default function Page() {
         <TypingIntro onComplete={handleIntroComplete} />
       </div>
 
-
       {/* Background 3D - Fixed & No Interaction */}
-      <div className="bg-black fixed inset-0 w-screen h-screen pointer-events-none z-0">
-        <div className="absolute inset-0 w-full h-full [&>canvas]:absolute [&>canvas]:inset-0 [&>canvas]:w-full [&>canvas]:h-full [&>canvas]:object-cover">
-          <Spline scene="https://prod.spline.design/C1kX9SM3iwdfommf/scene.splinecode" />
-        </div>
-      </div>
-
-
+      <Background3D />
 
       {/* Gradient Overlay - Fixed */}
-      <div className="fixed inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/90 backdrop-blur-[3px] pointer-events-none z-10" />
+      <div className="fixed inset-0 bg-black/40 pointer-events-none z-10" />
 
       {/* Layout Container */}
       <div className="relative flex flex-col md:flex-row z-20 p-5 md:p-15 min-h-screen">

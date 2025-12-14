@@ -25,7 +25,7 @@ export default function LeftSide({ active, onSelect }: NavMenuProps) {
           <SparklesText>Aphiwat On-at</SparklesText>
         </div>
         <div className="text-base md:text-lg font-mono tracking-tight text-zinc-300 sm:text-xl text-center md:text-left">
-          <HyperText>Software Developer · trainee</HyperText>
+          <HyperText>{'<Software Developer /> · trainee'}</HyperText>
         </div>
       </div>
       <div>
