@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -75,9 +76,11 @@ export default function ExperienceCard({
           className="flex flex-col items-center md:items-end md:w-72 mt-1.5 
                w-full" // ✅ ให้เต็มความกว้างใน mobile
         >
-          <img
+          <Image
             src={image}
             alt={position}
+            width={300}
+            height={176}
             className="w-full max-w-[300px] h-40 object-cover rounded-xl border border-zinc-800 
                  transition-transform duration-500 hover:scale-105
                  md:h-44 md:max-w-none self-start md:self-end" // ✅ mobile จำกัดขนาดสูงสุด / md ปล่อยเต็ม
