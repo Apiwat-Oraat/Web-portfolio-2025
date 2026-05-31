@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { SectionName } from "@/components/NavMenu";
 import TypingIntro from "@/components/TypingIntro";
 import RightSide from "@/components/RightSide";
@@ -9,43 +9,58 @@ import Background3D from "@/components/Background3D";
 
 export default function Page() {
   const [slideOut, setSlideOut] = useState<boolean>(false);
+  const [showIntro, setShowIntro] = useState<boolean>(true);
+  const previousBodyOverflow = useRef<string | null>(null);
 
 
   const [activeSection, setActiveSection] = useState<SectionName>("About");
 
-  const handleSelect = (section: SectionName) => {
+  const handleSelect = useCallback((section: SectionName) => {
     setActiveSection(section);
     document.getElementById(section)?.scrollIntoView({
       behavior: "smooth",
       block: "start",
     });
-  };
+  }, []);
 
-  const handleIntroComplete = (): void => {
+  const handleIntroComplete = useCallback((): void => {
     setSlideOut(true);
-  };
+  }, []);
 
   useEffect(() => {
-    if (slideOut) {
-      const timeout = setTimeout(() => {
-        document.body.style.overflow = "auto";
-      }, 2500); // ตรงกับ duration-1000
-
-      return () => clearTimeout(timeout);
-    } else {
-      document.body.style.overflow = "hidden";
+    if (previousBodyOverflow.current === null) {
+      previousBodyOverflow.current = document.body.style.overflow;
     }
+
+    if (!slideOut) {
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previousBodyOverflow.current ?? "";
+      };
+    }
+
+    const timeout = setTimeout(() => {
+      document.body.style.overflow = previousBodyOverflow.current ?? "";
+      setShowIntro(false);
+    }, 1100);
+
+    return () => {
+      clearTimeout(timeout);
+      document.body.style.overflow = previousBodyOverflow.current ?? "";
+    };
   }, [slideOut]);
 
 
   return (
     <div className="relative font-geist antialiased h-screen">
-      <div
-        className={`absolute inset-0 transition-transform duration-1000 ease-in-out z-50 ${slideOut ? '-translate-y-full' : 'translate-y-0'
-          }`}
-      >
-        <TypingIntro onComplete={handleIntroComplete} />
-      </div>
+      {showIntro && (
+        <div
+          className={`fixed inset-0 transition-transform duration-1000 ease-in-out z-50 ${slideOut ? '-translate-y-full' : 'translate-y-0'
+            }`}
+        >
+          <TypingIntro onComplete={handleIntroComplete} />
+        </div>
+      )}
 
       {/* Background 3D - Fixed & No Interaction */}
       <Background3D />

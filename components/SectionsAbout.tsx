@@ -27,7 +27,7 @@ export default function SectionsAbout({ setActiveSection }: SectionProps) {
     <section
       ref={ref}
       id="About"
-      className="max-w-3xl mx-auto mb-20 md:mb-50 scroll-mt-55 px-5 md:px-0 md:mt-20"
+      className="max-w-3xl mx-auto mb-16 md:mb-40 scroll-mt-55 px-5 md:px-0 md:mt-20"
     >
       <h1
         className="
