@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 import { Pointer } from '@/components/ui/pointer';
 import image1 from '@/public/492041016-882057d8-4480-4f00-8c64-8d8277638e2b.png'
 import image2 from '@/public/504663181-5253d82d-b0c9-48aa-a7ae-b054f3f1e811.jpg'
+import rickAndMortyImage from '@/public/rick-and-morty-multiverse-explorer.png'
+import bitbite from '@/public/bitbite.png'
 import { motion } from 'framer-motion';
 import { useSectionReplay } from './useSectionReplay';
 
@@ -37,6 +39,40 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
+        <ExperienceCard
+          date="2026 — Senior Project"
+          position="Kids Learning Game Web Application"
+          company="Github"
+          description="Developed the backend for a game-based learning platform for children with 7 interactive mini-games.
+Implemented JWT authentication, scoring system, player progress tracking, daily play limit, EXP-based
+ranking, and leaderboard.
+Designed database models and API endpoints using PostgreSQL and Prisma ORM."
+          link="https://github.com/Apiwat-Oraat/pbit-nongbrite-backend"
+          technologies={[
+            { label: "Node.js" },
+            { label: "Express.js" },
+            { label: "PostgreSQL" },
+            { label: "Prisma" },
+            { label: "JWT" },
+            { label: "Docker" },
+          ]}
+          image={bitbite.src} // optional
+        />
+        <ExperienceCard
+          date="2026 — personal project"
+          position="Rick and Morty Multiverse Explorer"
+          company="Github"
+          description="A professional frontend showcase project built to demonstrate mastery in modern web development.
+This application leverages the Rick and Morty API to provide a rich and interactive experience for exploring characters, locations, and episodes from the multiverse."
+          link="https://github.com/Apiwat-Oraat/rick-and-morty-explorer"
+          technologies={[
+            { label: "Next.js" },
+            { label: "Material UI" },
+            { label: "TypeScript" },
+            { label: "Rick and Morty REST API" },
+          ]}
+          image={rickAndMortyImage.src} // optional
+        />
         <ExperienceCard
           date="2024 — personal project"
           position="Java Project Management Application "

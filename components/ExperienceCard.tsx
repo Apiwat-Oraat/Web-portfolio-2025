@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -15,7 +16,7 @@ interface ExperienceCardProps {
   description: string;
   link: string;
   technologies: Technology[];
-  image?: string;
+  image?: string | StaticImageData;
 }
 
 export default function ExperienceCard({
