@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils"
 const reviews = [
   {
     name: "TailwindCss",
-    username: "css framwork",
+    username: "CSS framework",
     body: "",
     img: "https://avatars.githubusercontent.com/u/30317862?s=280&v=4",
   },
@@ -55,7 +55,7 @@ const reviews = [
   },
   {
     name: "Node.js",
-    username: "black end",
+    username: "back end",
     body: "",
     img: "https://www.borntodev.com/wp-content/uploads/2023/03/%E0%B8%94%E0%B8%B5%E0%B9%84%E0%B8%8B%E0%B8%99%E0%B9%8C%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B9%84%E0%B8%A1%E0%B9%88%E0%B8%A1%E0%B8%B5%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-8.png",
   },
@@ -69,8 +69,8 @@ const reviews = [
 
 const firstRow = reviews.slice(0,reviews.length / 1)
 const secondRow = reviews.slice(0,reviews.length / 1)
-const treeRow = reviews.slice(0,reviews.length / 1)
-const founrRow = reviews.slice(0,reviews.length / 1)
+const thirdRow = reviews.slice(0,reviews.length / 1)
+const fourthRow = reviews.slice(0,reviews.length / 1)
 
 const ReviewCard = ({
   img,
@@ -86,11 +86,7 @@ const ReviewCard = ({
   return (
     <figure
       className={cn(
-        "relative h-full w-fit cursor-pointer overflow-hidden rounded-xl border p-4 sm:w-36",
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        // dark styles
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+        "relative h-full w-fit cursor-pointer overflow-hidden rounded-xl border border-[#A58CF4]/25 bg-[#0D0D0D]/65 p-4 shadow-[0_0_24px_rgba(67,48,117,0.18)] transition-colors hover:border-[#A58CF4]/50 hover:bg-[#433075]/25 sm:w-36"
       )}
     >
       <div className="flex flex-row items-center gap-2">
@@ -99,7 +95,7 @@ const ReviewCard = ({
           <figcaption className="text-sm font-medium text-white">
             {name}
           </figcaption>
-          <p className="text-xs font-medium text-white/40">{username}</p>
+          <p className="text-xs font-medium text-[#A58CF4]/80">{username}</p>
         </div>
       </div>
       <blockquote className="mt-2 text-sm text-white">{body}</blockquote>
@@ -121,12 +117,12 @@ export function MarqueeDemoVertical() {
         ))}
       </Marquee>
       <Marquee pauseOnHover vertical className="[--duration:35s]">
-        {treeRow.map((review) => (
+        {thirdRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover vertical className="[--duration:35s]">
-        {founrRow.map((review) => (
+        {fourthRow.map((review) => (
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>

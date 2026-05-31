@@ -26,7 +26,7 @@ export default function SectionsEducation({ setActiveSection }: SectionProps) {
       className="mb-36 w-full max-w-4xl scroll-mt-32 scroll-smooth px-1"
     >
       <div className="mb-8 space-y-3 text-center md:text-left">
-        <h2 className="text-2xl font-semibold tracking-tight text-amber-50 md:text-3xl">
+        <h2 className="text-2xl font-semibold tracking-tight text-[#FAFAFA] md:text-3xl">
           Education
         </h2>
         <p className="mx-auto max-w-2xl text-sm leading-6 text-zinc-300 md:mx-0">

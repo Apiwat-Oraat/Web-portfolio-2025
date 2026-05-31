@@ -32,8 +32,8 @@ export default function SectionsSkills({ setActiveSection }: SectionProps) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="12" cy="12" r="10" className="fill-purple-500" />
-            <circle cx="12" cy="12" r="5" className="fill-white" />
+            <circle cx="12" cy="12" r="10" className="fill-[#433075]" />
+            <circle cx="12" cy="12" r="5" className="fill-[#A58CF4]" />
           </svg>
         </Pointer>
     </section>

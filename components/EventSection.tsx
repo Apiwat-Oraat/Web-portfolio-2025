@@ -8,7 +8,7 @@ export default function EventSection() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="grid md:grid-cols-2 gap-10 items-center py-16 border-b border-zinc-800"
+      className="grid md:grid-cols-2 gap-10 items-center py-16 border-b border-[#A58CF4]/25"
     >
       {/* Left Image */}
       <div className="relative group overflow-hidden rounded-2xl">
@@ -37,8 +37,8 @@ export default function EventSection() {
         <a
           href="#"
           className="inline-flex items-center gap-2 text-sm font-medium 
-                     text-zinc-200 border border-zinc-700 rounded-full px-5 py-2.5
-                     hover:text-white hover:border-white transition-all duration-300"
+                     text-zinc-200 border border-[#A58CF4]/35 rounded-full px-5 py-2.5
+                     hover:text-[#A58CF4] hover:border-[#A58CF4] transition-all duration-300"
         >
           Learn More →
         </a>
