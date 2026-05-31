@@ -21,6 +21,11 @@ export default function Page() {
       behavior: "smooth",
       block: "start",
     });
+    window.dispatchEvent(
+      new CustomEvent<SectionName>("portfolio-section-select", {
+        detail: section,
+      })
+    );
   }, []);
 
   const handleIntroComplete = useCallback((): void => {

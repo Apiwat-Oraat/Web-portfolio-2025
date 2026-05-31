@@ -12,6 +12,7 @@ import { useInView } from "react-intersection-observer";
 
 import { AnimatedList } from "@/components/ui/animated-list";
 import { cn } from "@/lib/utils";
+import { useSectionReplay } from "./useSectionReplay";
 
 type StackIconProps = {
   name: string;
@@ -328,17 +329,19 @@ function SkillNotificationCard({
 }
 
 function SkillContainer() {
+  const { replayKey, handleInViewChange } = useSectionReplay("Skills");
   const { ref, inView } = useInView({
     threshold: 0.25,
-    triggerOnce: true,
+    triggerOnce: false,
+    onChange: handleInViewChange,
   });
   const animatedGroups = [...skillGroups].reverse();
 
   return (
     <div ref={ref} className="relative mx-auto max-w-2xl text-[#FAFAFA]">
-      <div className="relative min-h-[760px] w-full overflow-visible p-1.5 md:min-h-[460px]">
+      <div className="relative min-h-[820px] w-full overflow-visible p-1.5 md:min-h-[620px]">
         {inView && (
-          <AnimatedList delay={420} className="gap-3">
+          <AnimatedList key={replayKey} delay={420} className="gap-3">
             {animatedGroups.map((group) => (
               <SkillNotificationCard key={group.title} group={group} />
             ))}

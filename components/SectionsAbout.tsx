@@ -4,6 +4,7 @@ import React from 'react'
 import { CoolMode } from "./ui/cool-mode";
 import { Pointer } from "./ui/pointer";
 import { motion } from "framer-motion";
+import { useSectionReplay } from "./useSectionReplay";
 
 type SectionName = "About" | "Education" | "Skills" | "Projects";
 
@@ -12,9 +13,11 @@ interface SectionProps {
 }
 
 export default function SectionsAbout({ setActiveSection }: SectionProps) {
+  const { replayKey, handleInViewChange } = useSectionReplay("About")
   const { ref, inView } = useInView({
     rootMargin: "-160px 0px 0px 0px",
     threshold: 0.25,
+    onChange: handleInViewChange,
   })
 
   useEffect(() => {
@@ -27,39 +30,46 @@ export default function SectionsAbout({ setActiveSection }: SectionProps) {
     <section
       ref={ref}
       id="About"
-      className="max-w-3xl mx-auto mb-16 md:mb-40 scroll-mt-55 px-5 md:px-0 md:mt-20"
+      className="max-w-3xl mx-auto mb-20 md:mb-56 scroll-mt-55 px-5 md:px-0 md:mt-20"
     >
-      <h1
-        className="
+      <motion.div
+        key={replayKey}
+        initial={{ opacity: 0, y: 18 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.55, ease: "easeOut" }}
+      >
+        <h1
+          className="
                   text-2xl sm:text-3xl md:text-3xl lg:text-4xl 
                   font-semibold text-[#FAFAFA] leading-snug sm:leading-tight"
-      >
-        Hi, I&apos;m Apiwat.
-        A student developer <br className="hidden sm:block" />
-        <CoolMode><a className="text-[#A58CF4] cursor-pointer">building modern web experiences.</a></CoolMode>
-      </h1>
+        >
+          Hi, I&apos;m Apiwat.
+          A student developer <br className="hidden sm:block" />
+          <CoolMode><a className="text-[#A58CF4] cursor-pointer">building modern web experiences.</a></CoolMode>
+        </h1>
 
-      <p className="text-zinc-300 text-sm font-mono tracking-widest mt-6">
-        I&apos;m currently a student in the Bachelor of Industrial Technology Program in
-        Information Technology at King Mongkut&apos;s University of Technology North
-        Bangkok (KMUTNB).
-      </p>
+        <p className="text-zinc-300 text-sm font-mono tracking-widest mt-6">
+          I&apos;m currently a student in the Bachelor of Industrial Technology Program in
+          Information Technology at King Mongkut&apos;s University of Technology North
+          Bangkok (KMUTNB).
+        </p>
 
-      <p className="text-zinc-300 text-sm md:text-sm font-mono leading-relaxed mt-4">
-        My academic focus is on software development and database systems.
-        I&apos;m always ready to learn and am currently diving deeper into web
-        development, exploring how to build responsive interfaces that connect
-        to robust, <span className="text-[#A58CF4]">database-driven backends </span>. ✨
+        <p className="text-zinc-300 text-sm md:text-sm font-mono leading-relaxed mt-4">
+          My academic focus is on software development and database systems.
+          I&apos;m always ready to learn and am currently diving deeper into web
+          development, exploring how to build responsive interfaces that connect
+          to robust, <span className="text-[#A58CF4]">database-driven backends </span>. ✨
 
-      </p>
+        </p>
 
-      <p className="text-zinc-300 text-sm md:text-sm font-mono leading-relaxed mt-4">
-        I am passionate about applying my skills to new projects and am always
-        looking for opportunities to improve myself. I&apos;m excited to see how
-        technology and design can shape better digital interactions.
+        <p className="text-zinc-300 text-sm md:text-sm font-mono leading-relaxed mt-4">
+          I am passionate about applying my skills to new projects and am always
+          looking for opportunities to improve myself. I&apos;m excited to see how
+          technology and design can shape better digital interactions.
 
 
-      </p>
+        </p>
+      </motion.div>
       <Pointer>
         <motion.div
           animate={{

@@ -69,7 +69,7 @@ export default function NavMenu({ active, onSelect }: NavMenuProps) {
               ></span>
 
               <span
-                className={`relative transition-transform duration-700 ease-out ${isActive ? "translate-x-4" : "group-hover:translate-x-4"}`}
+                className={`relative transition-transform duration-700 ease-out ${isActive ? "translate-x-6" : "group-hover:translate-x-6"}`}
               >
                 {label}
                 <span
