@@ -1,4 +1,4 @@
-import { Globe, Brain, Apple } from "lucide-react";
+import { Globe, Brain } from "lucide-react";
 import EventCard from "./EventCard";
 import nonghanlogo from "@/public/โลโก้วิทยาลัยnew-768x768-removebg-preview.png"
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import ExperienceCard from './ExperienceCard'
 import { useInView } from "react-intersection-observer";
 import { Pointer } from '@/components/ui/pointer';
@@ -22,7 +22,7 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
     if (inView) {
       setActiveSection("Projects")
     }
-  }, [inView])
+  }, [inView, setActiveSection])
 
   return (
     <section ref={ref} id="Projects" className=" flex flex-col gap-5 mb-45 scroll-mt-40">

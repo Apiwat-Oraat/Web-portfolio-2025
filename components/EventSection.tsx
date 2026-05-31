@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function EventSection() {
@@ -11,9 +12,11 @@ export default function EventSection() {
     >
       {/* Left Image */}
       <div className="relative group overflow-hidden rounded-2xl">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000"
           alt="Creative Conference"
+          width={1000}
+          height={667}
           className="rounded-2xl object-cover w-full h-72 md:h-96 transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />

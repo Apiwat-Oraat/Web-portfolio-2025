@@ -20,7 +20,7 @@ export default function SectionsSkills({ setActiveSection }: SectionProps) {
     if (inView) {
       setActiveSection("Skills")
     }
-  },[inView])
+  },[inView, setActiveSection])
   return (
     <section ref={ref} id="Skills" className="mb-45 scroll-mt-40">
       <SkillContainer />

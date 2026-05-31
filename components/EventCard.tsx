@@ -1,5 +1,6 @@
 "use client";
 import React, { JSX } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 interface Tag {
@@ -139,9 +140,12 @@ const EventCard: React.FC<EventCardProps> = ({
           <div className="relative w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl 
                       border-4 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] 
                       flex items-center justify-center hover:border-white/50 transition-all duration-300 hover:scale-110">
-            <img
+            <Image
               src={logo}
               alt={title}
+              width={48}
+              height={48}
+              unoptimized
               className="w-12 h-12 rounded-full object-cover"
             />
           </div>

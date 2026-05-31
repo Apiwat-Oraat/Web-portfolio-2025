@@ -1,6 +1,5 @@
 "use client";
-import React, { useRef, useState, useEffect } from "react";
-import Spline from "@splinetool/react-spline";
+import React, { useState, useEffect } from "react";
 import { SectionName } from "@/components/NavMenu";
 import TypingIntro from "@/components/TypingIntro";
 import RightSide from "@/components/RightSide";
@@ -13,15 +12,6 @@ export default function Page() {
 
 
   const [activeSection, setActiveSection] = useState<SectionName>("About");
-
-
-  const sections: Record<SectionName, React.RefObject<HTMLDivElement | null>> = {
-    About: useRef<HTMLDivElement | null>(null),
-    Education: useRef<HTMLDivElement | null>(null),
-    Skills: useRef<HTMLDivElement | null>(null),
-    Projects: useRef<HTMLDivElement | null>(null),
-  };
-
 
   const handleSelect = (section: SectionName) => {
     setActiveSection(section);

@@ -19,7 +19,7 @@ export default function SectionsEducation({setActiveSection}:SectionProps) {
     if (inView) {
       setActiveSection("Education")
     }
-  }, [inView])
+  }, [inView, setActiveSection])
   return (
     <section ref={ref} id="Education" className="mb-45 flex flex-col  scroll-mt-45 scroll-smooth">
       <TimelineSection />
