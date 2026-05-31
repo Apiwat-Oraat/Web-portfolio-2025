@@ -51,7 +51,7 @@ export default function Page() {
       <Background3D />
 
       {/* Gradient Overlay - Fixed */}
-      <div className="fixed inset-0 bg-black/40 pointer-events-none z-10" />
+      <div className="fixed inset-0 bg-[#0D0D0D]/55 pointer-events-none z-10" />
 
       {/* Layout Container */}
       <div className="relative flex flex-col md:flex-row z-20 p-5 md:p-15 min-h-screen">

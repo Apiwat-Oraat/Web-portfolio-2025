@@ -44,11 +44,11 @@ function TypingIntro({
   }, [isComplete, onComplete, pauseDuration]);
   
   return (
-<div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
+<div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#0D0D0D] via-[#21183A] to-[#0D0D0D] overflow-hidden">
   <div className="text-center">
-    <h1 className="text-2xl font-mono text-yellow-400 mb-4 drop-shadow-[0_0_30px_rgba(250,204,21,0.5)]">
+    <h1 className="text-2xl font-mono text-[#FAFAFA] mb-4 drop-shadow-[0_0_30px_rgba(165,140,244,0.55)]">
       {displayText}
-      <span className="animate-pulse text-yellow-300">|</span>
+      <span className="animate-pulse text-[#A58CF4]">|</span>
     </h1>
   </div>
 </div>
