@@ -55,11 +55,11 @@ const EventCard: React.FC<EventCardProps> = ({
 
       <div className="flex flex-col items-center">
         <div className="sticky top-19 flex size-6 items-center justify-center max-sm:top-5">
-          <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-[#433075]/45">
-            <span className="size-3 rounded-full bg-[#A58CF4] shadow-[0_0_18px_rgba(165,140,244,0.75)]" />
+          <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+            <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
           </span>
         </div>
-        <span className="-mt-2.5 w-px flex-1 border border-[#A58CF4]/25" />
+        <span className="-mt-2.5 w-px flex-1 bg-gradient-to-b from-[#FAFAFA]/45 via-[#BFC0C7]/25 to-transparent shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
       </div>
 
       <div className="flex flex-1 flex-col gap-4 pb-11 pl-3 md:pl-6 lg:pl-9">
@@ -73,9 +73,9 @@ const EventCard: React.FC<EventCardProps> = ({
         <motion.article
           whileHover={{ y: -4 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="rounded-2xl border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-md transition-all duration-500 hover:-translate-y-1 hover:border-[#A58CF4]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] md:p-4"
+          className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-md transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100 md:p-4"
         >
-          <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+          <div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-start">
             <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/10 p-2">
               <Image
                 src={logo}

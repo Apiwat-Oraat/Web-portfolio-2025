@@ -33,14 +33,14 @@ export default function ExperienceCard({
       whileInView={{ opacity: 1, y: 0 }}          // ค่อยๆ เลื่อนขึ้นและแสดงเต็ม
       transition={{ duration: 0.6, ease: "easeOut" }} // เวลาและ curve
       viewport={{ once: true, amount: 0.2 }}      // เล่นครั้งเดียว, 30% เข้า viewport ถึงจะเล่น
-      className="max-w-5xl mx-auto backdrop-blur-md bg-white/5 border border-white/10
+      className="relative overflow-hidden max-w-5xl mx-auto backdrop-blur-md bg-white/5 border border-white/10
            text-[#FAFAFA] rounded-2xl p-3 md:p-4 flex flex-col md:flex-row items-start
            md:items-center gap-6 md:gap-10 shadow-[0_0_40px_rgba(250,250,250,0.05)]
-           transition-all duration-500 hover:border-[#A58CF4]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)]
+           transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100
            hover:-translate-y-1"
     >
       {/* Left Content */}
-      <div className="flex-1 space-y-4">
+      <div className="relative z-10 flex-1 space-y-4">
         {/* Meta info */}
         <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-400">
           <span className="border border-[#A58CF4]/25 bg-[#433075]/30 px-3 py-1 rounded-full text-[#FAFAFA]">Projects</span>
@@ -73,7 +73,7 @@ export default function ExperienceCard({
       {/* Right: Image (optional) */}
       {image && (
         <div
-          className="flex flex-col items-center md:items-end md:w-72 mt-1.5 
+          className="relative z-10 flex flex-col items-center md:items-end md:w-72 mt-1.5
                w-full" // ✅ ให้เต็มความกว้างใน mobile
         >
           <Image
