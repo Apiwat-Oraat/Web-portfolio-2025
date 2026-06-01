@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function EventSection() {
@@ -7,13 +8,15 @@ export default function EventSection() {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true }}
-      className="grid md:grid-cols-2 gap-10 items-center py-16 border-b border-zinc-800"
+      className="grid md:grid-cols-2 gap-10 items-center py-16 border-b border-[#A58CF4]/25"
     >
       {/* Left Image */}
       <div className="relative group overflow-hidden rounded-2xl">
-        <img
+        <Image
           src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=1000"
           alt="Creative Conference"
+          width={1000}
+          height={667}
           className="rounded-2xl object-cover w-full h-72 md:h-96 transition-transform duration-700 group-hover:scale-105"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-2xl" />
@@ -34,8 +37,8 @@ export default function EventSection() {
         <a
           href="#"
           className="inline-flex items-center gap-2 text-sm font-medium 
-                     text-zinc-200 border border-zinc-700 rounded-full px-5 py-2.5
-                     hover:text-white hover:border-white transition-all duration-300"
+                     text-zinc-200 border border-[#A58CF4]/35 rounded-full px-5 py-2.5
+                     hover:text-[#A58CF4] hover:border-[#A58CF4] transition-all duration-300"
         >
           Learn More →
         </a>

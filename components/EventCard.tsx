@@ -1,6 +1,11 @@
 "use client";
+
 import React, { JSX } from "react";
+import Image from "next/image";
+import { ExternalLink, MapPin } from "lucide-react";
 import { motion } from "framer-motion";
+
+import { Badge } from "@/components/ui/badge";
 
 interface Tag {
   icon: JSX.Element;
@@ -10,6 +15,7 @@ interface Tag {
 interface EventCardProps {
   logo: string;
   date: string;
+  badge: string;
   title: string;
   location: string;
   description: string;
@@ -21,6 +27,7 @@ interface EventCardProps {
 const EventCard: React.FC<EventCardProps> = ({
   logo,
   date,
+  badge,
   title,
   location,
   description,
@@ -28,125 +35,115 @@ const EventCard: React.FC<EventCardProps> = ({
   link,
   index,
 }) => {
-  const isLeft = index % 2 === 0;
-
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      id={`education-${index + 1}`}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      viewport={{ once: true, margin: "-100px" }}
-      className="relative flex items-center justify-between w-full max-w-6xl mx-auto mb-16"
+      transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+      viewport={{ once: true, amount: 0.35 }}
+      className="relative flex w-full items-stretch scroll-mt-18 justify-end gap-2"
     >
-      {/* เส้น Timeline กลาง */}
-      <div className="hidden md:block absolute left-1/2 top-0 transform -translate-x-1/2 h-full w-[3px] bg-white/10 backdrop-blur-[2px]" />
-
-      {/* Card Content */}
-      <div
-        className={`w-full md:w-[calc(50%-3rem)] ${
-          isLeft
-            ? "md:ml-0 md:mr-auto md:pr-8"
-            : "md:ml-auto md:mr-0 md:pl-8"
-        }`}
-      >
-        <motion.div
-          whileHover={{ scale: 1.03, y: -4 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-6 
-                     border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.3)] 
-                     hover:bg-white/20 hover:border-white/40 transition-all duration-500 group overflow-hidden"
-        >
-          {/* Highlight gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl" />
-
-          {/* Content */}
-          <div className="relative z-10">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="h-1 w-12 bg-white/40 rounded-full" />
-              <p className="text-sm font-medium text-white/80 uppercase tracking-wider">
-                {date}
-              </p>
-            </div>
-
-            <h3 className="text-2xl font-bold mt-2 text-white drop-shadow-sm group-hover:text-white transition-colors duration-300">
-              {title}
-            </h3>
-
-            <div className="flex items-center gap-2 mt-2 text-white/70">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              <p className="text-sm">{location}</p>
-            </div>
-
-            <p className="text-base text-white/80 mt-4 leading-relaxed">
-              {description}
-            </p>
-
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2 mt-5">
-              {tags.map((tag, i) => (
-                <motion.span
-                  key={i}
-                  whileHover={{ scale: 1.05 }}
-                  className="flex items-center gap-1.5 bg-white/10 text-white 
-                             text-xs font-medium px-4 py-2 rounded-full border border-white/20
-                             hover:bg-white/20 hover:border-white/40 transition-all duration-300"
-                >
-                  {tag.icon}
-                  {tag.label}
-                </motion.span>
-              ))}
-            </div>
-
-            {/* Link */}
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 mt-6 text-sm font-semibold 
-                         text-white/90 hover:text-white transition-all duration-300
-                         group/link"
-            >
-              <span>Read more</span>
-              <svg
-                className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </motion.div>
+      <div className="sticky top-19 hidden w-32 flex-col items-end gap-1.5 self-start pb-3 md:flex">
+        <Badge className="flex h-5 w-auto justify-end rounded-full border border-[#A58CF4]/30 bg-[#433075]/35 px-2.5 text-xs font-medium text-[#FAFAFA] hover:bg-[#433075]/45">
+          {badge}
+        </Badge>
+        <div className="text-right text-xs font-medium text-zinc-400">
+          {date}
+        </div>
       </div>
 
-      {/* Logo Circle กลาง */}
-      <motion.div
-        initial={{ scale: 0 }}
-        whileInView={{ scale: 1 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        viewport={{ once: true }}
-        className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 items-center justify-center z-20"
-      >
-        <div className="relative">
-          {/* Glow Effect */}
-          <div className="absolute inset-0 rounded-full bg-white/30 blur-xl animate-pulse" />
-
-          {/* Logo Container */}
-          <div className="relative w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl 
-                      border-4 border-white/30 shadow-[0_0_20px_rgba(255,255,255,0.2)] 
-                      flex items-center justify-center hover:border-white/50 transition-all duration-300 hover:scale-110">
-            <img
-              src={logo}
-              alt={title}
-              className="w-12 h-12 rounded-full object-cover"
-            />
-          </div>
+      <div className="flex self-stretch flex-col items-center">
+        <div className="sticky top-19 flex size-6 items-center justify-center max-sm:top-5">
+          <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+            <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+          </span>
         </div>
-      </motion.div>
+        <span className="-mt-2.5 w-px flex-1 bg-[#BFC0C7]/35 shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
+      </div>
+
+      <div className="flex flex-1 flex-col gap-3 pb-6 pl-3 md:pl-5 lg:pl-7">
+        <div className="flex flex-col gap-2 md:hidden">
+          <Badge className="flex w-fit rounded-full border border-[#A58CF4]/30 bg-[#433075]/35 text-[#FAFAFA] hover:bg-[#433075]/45">
+            {badge}
+          </Badge>
+          <div className="text-sm font-medium text-zinc-300">{date}</div>
+        </div>
+
+        <motion.article
+          whileHover={{ y: -4 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-md transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100 md:min-h-[214px] md:p-3.5"
+        >
+          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/10 p-2">
+              <Image
+                src={logo}
+                alt={title}
+                width={44}
+                height={44}
+                unoptimized
+                className="h-11 w-11 rounded-lg object-contain"
+              />
+            </div>
+
+            <div className="min-w-0 flex-1 space-y-3">
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between">
+                <div className="space-y-2.5">
+                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-zinc-400">
+                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[#FAFAFA]">
+                      Education
+                    </span>
+                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[#A58CF4]">
+                      {badge}
+                    </span>
+                    <span>{date}</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold leading-snug text-[#FAFAFA] md:text-lg">
+                      {title}
+                    </h3>
+                    <div className="flex items-center gap-2 text-xs text-zinc-400 md:text-sm">
+                      <MapPin
+                        size={15}
+                        className="shrink-0 text-[#A58CF4]"
+                      />
+                      <span>{location}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Open ${title} website`}
+                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#A58CF4]/35 text-zinc-200 transition-all duration-300 hover:border-[#A58CF4] hover:text-[#A58CF4]"
+                >
+                  <ExternalLink size={15} />
+                </a>
+              </div>
+
+              <p className="text-xs leading-relaxed text-zinc-400 md:text-sm">
+                {description}
+              </p>
+
+              <div className="flex flex-wrap gap-1.5 pt-1">
+                {tags.map((tag) => (
+                  <span
+                    key={tag.label}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[11px] text-zinc-300"
+                  >
+                    {tag.icon}
+                    {tag.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.article>
+      </div>
     </motion.div>
   );
 };
