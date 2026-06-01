@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-
-type SectionName = "About" | "Education" | "Skills" | "Projects";
+import type { SectionName } from "@/types/sections";
 
 export function useSectionReplay(section: SectionName) {
   const [replayKey, setReplayKey] = useState(0);

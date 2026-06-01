@@ -5,8 +5,7 @@ import { CoolMode } from "./ui/cool-mode";
 import { Pointer } from "./ui/pointer";
 import { motion } from "framer-motion";
 import { useSectionReplay } from "./useSectionReplay";
-
-type SectionName = "About" | "Education" | "Skills" | "Projects";
+import type { SectionName } from "@/types/sections";
 
 interface SectionProps {
   setActiveSection: (section: SectionName) => void

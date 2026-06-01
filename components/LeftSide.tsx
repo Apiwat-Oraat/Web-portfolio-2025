@@ -5,8 +5,7 @@ import React from 'react'
 import { HyperText } from './ui/hyper-text';
 import NavMenu from './NavMenu';
 import { SparklesText } from './ui/sparkles-text';
-
-export type SectionName = "About" | "Education" | "Skills" | "Projects";
+import type { SectionName } from '@/types/sections';
 
 interface NavMenuProps {
   active: SectionName;

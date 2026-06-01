@@ -1,9 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
+import type { SectionName } from "@/types/sections";
 
-// ✅ Type สำหรับชื่อ section
-export type SectionName = "About" | "Education" | "Skills" | "Projects";
+export type { SectionName };
 
 interface NavMenuProps {
   active: SectionName;
@@ -12,7 +12,7 @@ interface NavMenuProps {
 
 export default function NavMenu({ active, onSelect }: NavMenuProps) {
   const [open, setOpen] = useState(false);
-  const items: SectionName[] = ["About", "Education", "Skills", "Projects"];
+  const items: SectionName[] = ["About", "Education", "Experience", "Skills", "Projects"];
 
   return (
     <>
