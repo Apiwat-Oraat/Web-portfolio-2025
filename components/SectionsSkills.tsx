@@ -2,8 +2,7 @@ import SkillContainer from "./SkillContainer";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react";
 import { Pointer } from "@/components/ui/pointer";
-
-type SectionName = "About" | "Education" | "Skills" | "Projects";
+import type { SectionName } from "@/types/sections";
 
 interface SectionProps {
   setActiveSection: (section: SectionName) => void;
