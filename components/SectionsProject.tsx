@@ -31,7 +31,7 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
   }, [inView, setActiveSection])
 
   return (
-    <section ref={ref} id="Projects" className="flex flex-col gap-5 mb-45 scroll-mt-15">
+    <section ref={ref} id="Projects" className="flex flex-col gap-5 mb-45 scroll-mt-25">
       <motion.div
         key={replayKey}
         className="flex flex-col gap-5"
