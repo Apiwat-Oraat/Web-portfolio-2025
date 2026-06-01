@@ -112,7 +112,11 @@ export function ExperienceCard({
       )}
     >
       {/* Timeline Marker (Desktop only) */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full border-[3px] border-[#120f18] shadow-sm z-20 hidden md:block bg-gradient-to-br from-[#A58CF4] to-[#433075]"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex size-6 items-center justify-center">
+        <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+          <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+        </span>
+      </div>
 
       {/* Card Form */}
       <div className="w-full md:w-[46%]">
@@ -290,9 +294,10 @@ export default function ExperienceTimeline() {
               className="w-full relative pl-10 md:pl-0"
             >
               {/* Left Dot (Mobile) */}
-              <div className="absolute md:hidden left-[22px] top-6 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-10">
-                  <span className="flex size-3 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-[#A58CF4] to-[#433075] border-[2px] border-[#120f18] shadow-[0_0_8px_rgba(165,140,244,0.4)]">
-                  </span>
+              <div className="absolute md:hidden left-[22px] top-6 -translate-x-1/2 -translate-y-1/2 flex size-6 items-center justify-center z-10">
+                <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+                  <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+                </span>
               </div>
 
               <ExperienceCard
