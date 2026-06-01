@@ -42,27 +42,27 @@ const EventCard: React.FC<EventCardProps> = ({
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
       viewport={{ once: true, amount: 0.35 }}
-      className="relative flex w-full scroll-mt-18 justify-end gap-2"
+      className="relative flex w-full items-stretch scroll-mt-18 justify-end gap-2"
     >
-      <div className="sticky top-19 hidden w-36 flex-col items-end gap-2 self-start pb-4 md:flex">
-        <Badge className="flex h-6 w-auto justify-end rounded-full border border-[#A58CF4]/30 bg-[#433075]/35 px-3 text-sm font-medium text-[#FAFAFA] hover:bg-[#433075]/45">
+      <div className="sticky top-19 hidden w-32 flex-col items-end gap-1.5 self-start pb-3 md:flex">
+        <Badge className="flex h-5 w-auto justify-end rounded-full border border-[#A58CF4]/30 bg-[#433075]/35 px-2.5 text-xs font-medium text-[#FAFAFA] hover:bg-[#433075]/45">
           {badge}
         </Badge>
-        <div className="text-right text-sm font-medium text-zinc-400">
+        <div className="text-right text-xs font-medium text-zinc-400">
           {date}
         </div>
       </div>
 
-      <div className="flex flex-col items-center">
+      <div className="flex self-stretch flex-col items-center">
         <div className="sticky top-19 flex size-6 items-center justify-center max-sm:top-5">
           <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
             <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
           </span>
         </div>
-        <span className="-mt-2.5 w-px flex-1 bg-gradient-to-b from-[#FAFAFA]/45 via-[#BFC0C7]/25 to-transparent shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
+        <span className="-mt-2.5 w-px flex-1 bg-[#BFC0C7]/35 shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
       </div>
 
-      <div className="flex flex-1 flex-col gap-4 pb-11 pl-3 md:pl-6 lg:pl-9">
+      <div className="flex flex-1 flex-col gap-3 pb-6 pl-3 md:pl-5 lg:pl-7">
         <div className="flex flex-col gap-2 md:hidden">
           <Badge className="flex w-fit rounded-full border border-[#A58CF4]/30 bg-[#433075]/35 text-[#FAFAFA] hover:bg-[#433075]/45">
             {badge}
@@ -73,38 +73,38 @@ const EventCard: React.FC<EventCardProps> = ({
         <motion.article
           whileHover={{ y: -4 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-md transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100 md:p-4"
+          className="relative min-h-[220px] overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-md transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100 md:min-h-[214px] md:p-3.5"
         >
-          <div className="relative z-10 flex flex-col gap-5 sm:flex-row sm:items-start">
-            <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/10 p-2">
+          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start">
+            <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/10 p-2">
               <Image
                 src={logo}
                 alt={title}
-                width={48}
-                height={48}
+                width={44}
+                height={44}
                 unoptimized
-                className="h-12 w-12 rounded-lg object-contain"
+                className="h-11 w-11 rounded-lg object-contain"
               />
             </div>
 
-            <div className="min-w-0 flex-1 space-y-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                <div className="space-y-3">
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-zinc-400">
-                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-3 py-1 text-[#FAFAFA]">
+            <div className="min-w-0 flex-1 space-y-3">
+              <div className="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between">
+                <div className="space-y-2.5">
+                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-zinc-400">
+                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[#FAFAFA]">
                       Education
                     </span>
-                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-3 py-1 text-[#A58CF4]">
+                    <span className="rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[#A58CF4]">
                       {badge}
                     </span>
                     <span>{date}</span>
                   </div>
 
                   <div className="space-y-2">
-                    <h3 className="text-xl font-semibold leading-snug text-[#FAFAFA] md:text-xl">
+                    <h3 className="text-lg font-semibold leading-snug text-[#FAFAFA] md:text-lg">
                       {title}
                     </h3>
-                    <div className="flex items-center gap-2 text-sm text-zinc-400">
+                    <div className="flex items-center gap-2 text-xs text-zinc-400 md:text-sm">
                       <MapPin
                         size={15}
                         className="shrink-0 text-[#A58CF4]"
@@ -119,21 +119,21 @@ const EventCard: React.FC<EventCardProps> = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Open ${title} website`}
-                  className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#A58CF4]/35 text-zinc-200 transition-all duration-300 hover:border-[#A58CF4] hover:text-[#A58CF4]"
+                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#A58CF4]/35 text-zinc-200 transition-all duration-300 hover:border-[#A58CF4] hover:text-[#A58CF4]"
                 >
-                  <ExternalLink size={16} />
+                  <ExternalLink size={15} />
                 </a>
               </div>
 
-              <p className="text-sm leading-relaxed text-zinc-400">
+              <p className="text-xs leading-relaxed text-zinc-400 md:text-sm">
                 {description}
               </p>
 
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-1.5 pt-1">
                 {tags.map((tag) => (
                   <span
                     key={tag.label}
-                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-3 py-1 text-xs text-zinc-300"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2.5 py-0.5 text-[11px] text-zinc-300"
                   >
                     {tag.icon}
                     {tag.label}

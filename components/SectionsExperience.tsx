@@ -1,31 +1,32 @@
-import React, { useEffect } from 'react'
-import TimelineSection from './TimelineSection'
-import { useInView } from 'react-intersection-observer'
-import { motion } from 'framer-motion'
-import { useSectionReplay } from './useSectionReplay'
-import type { SectionName } from '@/types/sections';
+import React, { useEffect } from "react";
+import ExperienceTimeline from "./ExperienceTimeline";
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+import { useSectionReplay } from "./useSectionReplay";
+import type { SectionName } from "@/types/sections";
 
 interface SectionProps {
   setActiveSection: (section: SectionName) => void;
 }
 
-export default function SectionsEducation({ setActiveSection }: SectionProps) {
-  const { replayKey, handleInViewChange } = useSectionReplay("Education")
+export default function SectionsExperience({ setActiveSection }: SectionProps) {
+  const { replayKey, handleInViewChange } = useSectionReplay("Experience");
   const { ref, inView } = useInView({
     rootMargin: "-160px 0px 0px 0px",
     threshold: 0.25,
     onChange: handleInViewChange,
-  })
+  });
 
   useEffect(() => {
     if (inView) {
-      setActiveSection("Education")
+      setActiveSection("Experience");
     }
-  }, [inView, setActiveSection])
+  }, [inView, setActiveSection]);
+
   return (
     <section
       ref={ref}
-      id="Education"
+      id="Experience"
       className="mb-36 w-full max-w-4xl scroll-mt-25 scroll-smooth px-1"
     >
       <motion.div
@@ -36,14 +37,14 @@ export default function SectionsEducation({ setActiveSection }: SectionProps) {
       >
         <div className="mb-8 space-y-3 text-center md:text-left">
           <h2 className="text-2xl font-semibold tracking-tight text-[#FAFAFA] md:text-3xl">
-            Education
+            Experience
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-6 text-zinc-300 md:mx-0">
-            My academic background in information technology and digital business.
+            Professional internship and work experience.
           </p>
         </div>
-        <TimelineSection />
+        <ExperienceTimeline />
       </motion.div>
     </section>
-  )
+  );
 }
