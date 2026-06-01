@@ -31,7 +31,7 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
   }, [inView, setActiveSection])
 
   return (
-    <section ref={ref} id="Projects" className=" flex flex-col gap-5 mb-45 scroll-mt-40">
+    <section ref={ref} id="Projects" className="flex flex-col gap-5 mb-45 scroll-mt-15">
       <motion.div
         key={replayKey}
         className="flex flex-col gap-5"
@@ -39,6 +39,15 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
+        <div className="mb-3 space-y-2 text-center md:text-left">
+          <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] md:text-4xl">
+            Projects
+          </h2>
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-400 md:mx-0 md:text-base">
+            Selected software projects built across web applications, APIs, and desktop systems.
+          </p>
+        </div>
+
         <ExperienceCard
           date="2026 — Senior Project"
           position="Kids Learning Game Web Application"
