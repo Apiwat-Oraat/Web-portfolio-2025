@@ -26,7 +26,7 @@ export default function SectionsSkills({ setActiveSection }: SectionProps) {
     <section
       ref={ref}
       id="Skills"
-      className="mb-40 w-full max-w-4xl scroll-mt-24 px-1 md:mb-52"
+      className="mb-1 w-full max-w-3xl scroll-mt-25 px-1 md:mb-1"
     >
       <div className="mb-4 space-y-2 text-center md:text-left">
         <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] md:text-4xl">

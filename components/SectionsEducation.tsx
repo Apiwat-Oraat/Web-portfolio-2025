@@ -27,7 +27,7 @@ export default function SectionsEducation({ setActiveSection }: SectionProps) {
     <section
       ref={ref}
       id="Education"
-      className="mb-36 w-full max-w-4xl scroll-mt-32 scroll-smooth px-1"
+      className="mb-36 w-full max-w-4xl scroll-mt-25 scroll-smooth px-1"
     >
       <motion.div
         key={replayKey}
