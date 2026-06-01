@@ -116,7 +116,7 @@ export function ExperienceCard({
 
       {/* Card Form */}
       <div className="w-full md:w-[46%]">
-        <div className="overflow-hidden rounded-[24px] shadow-[0px_4px_20px_rgba(0,0,0,0.2)] hover:-translate-y-1 transition-transform duration-300 border border-white/10 bg-[#120f18]">
+        <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100">
           {/* Header part with gradient */}
           <div className={cn("p-6 relative", gradientClass)}>
             {/* External Link */}
@@ -150,8 +150,8 @@ export function ExperienceCard({
             </div>
           </div>
 
-          {/* Body part details */}
-          <div className="bg-[#120f18] p-6 pt-4 space-y-1">
+          {/* Body part details (Glassy transparent) */}
+          <div className="bg-black/20 p-6 pt-4 space-y-1">
             {/* Details Accordion */}
             <div className="border-t border-white/5 pt-3">
               <button
