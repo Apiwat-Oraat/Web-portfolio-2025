@@ -3,10 +3,11 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import SectionsAbout from './SectionsAbout'
 import SectionsEducation from './SectionsEducation'
+import SectionsExperience from './SectionsExperience'
 import SectionsSkills from './SectionsSkills'
 import SectionsProject from './SectionsProject'
+import type { SectionName } from '@/types/sections'
 
-type SectionName = "About" | "Education" | "Skills" | "Projects";
 interface SectionProps {
   setActiveSection: (section: SectionName) => void;
 }
@@ -22,6 +23,7 @@ export default function RightSide({setActiveSection}:SectionProps) {
 
       <SectionsAbout setActiveSection={setActiveSection} />
       <SectionsEducation setActiveSection={setActiveSection} />
+      <SectionsExperience setActiveSection={setActiveSection} />
       <SectionsSkills setActiveSection={setActiveSection} />
       <SectionsProject setActiveSection={setActiveSection} />
 

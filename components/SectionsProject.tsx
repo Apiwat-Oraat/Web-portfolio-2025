@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from 'react'
 import ExperienceCard from './ExperienceCard'
 import { useInView } from "react-intersection-observer";
@@ -8,8 +10,7 @@ import rickAndMortyImage from '@/public/rick-and-morty-multiverse-explorer.png'
 import bitbite from '@/public/bitbite.png'
 import { motion } from 'framer-motion';
 import { useSectionReplay } from './useSectionReplay';
-
-type SectionName = "About" | "Education" | "Skills" | "Projects";
+import type { SectionName } from '@/types/sections';
 
 
 interface SectionProps {
