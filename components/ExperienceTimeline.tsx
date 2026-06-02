@@ -46,7 +46,7 @@ const experiences: ExperienceItem[] = [
     ],
     icon: Building2,
     imageLogo: "/mie-logo.png",
-    gradientClass: "bg-gradient-to-br from-[#0B7EFF] via-[#68B2FF] to-[#A0D8FF] dark:from-[#020617] dark:via-[#0F172A] dark:to-[#1E3A8A] transition-colors duration-500",
+    gradientClass: "bg-gradient-to-br from-[#0B7EFF] via-[#68B2FF] to-[#A0D8FF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
   {
     position: "Production Intern",
@@ -60,7 +60,7 @@ const experiences: ExperienceItem[] = [
     technologies: ["Manufacturing", "Production Line"],
     icon: Factory,
     imageLogo: "/misu-logo.png",
-    gradientClass: "bg-gradient-to-br from-[#0066FF] via-[#5CB2FF] to-[#BFE0FF] dark:from-[#020617] dark:via-[#0B1B3D] dark:to-[#1D4ED8] transition-colors duration-500",
+    gradientClass: "bg-gradient-to-br from-[#0066FF] via-[#5CB2FF] to-[#BFE0FF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
   {
     position: "Graphic Design Intern",
@@ -74,7 +74,7 @@ const experiences: ExperienceItem[] = [
     ],
     technologies: ["Graphic Design", "Print Production", "Layout Design"],
     icon: Store,
-    gradientClass: "bg-gradient-to-br from-[#007BFF] via-[#4DA8FF] to-[#99CFFF] dark:from-[#020617] dark:via-[#060D20] dark:to-[#11265C] transition-colors duration-500",
+    gradientClass: "bg-gradient-to-br from-[#007BFF] via-[#4DA8FF] to-[#99CFFF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
 ];
 
@@ -140,7 +140,7 @@ export function ExperienceCard({
                 <ExternalLink size={14} />
               </a>
             )}
-            
+
             <div className="flex gap-4 items-start pr-8">
               <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0 overflow-hidden transition-colors duration-300">
                 {imageLogo ? (
