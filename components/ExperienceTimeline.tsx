@@ -144,7 +144,7 @@ export function ExperienceCard({
             <div className="flex gap-4 items-start pr-8">
               <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0 overflow-hidden transition-colors duration-300">
                 {imageLogo ? (
-                  <Image src={imageLogo} alt={`${company} logo`} width={48} height={48} className="w-full h-full object-contain p-1 bg-white" unoptimized />
+                  <Image src={imageLogo} alt={`${company} logo`} width={48} height={48} sizes="48px" className="w-full h-full object-contain p-1 bg-white" />
                 ) : (
                   <Icon className="w-6 h-6" strokeWidth={1.5} />
                 )}

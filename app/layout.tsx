@@ -12,12 +12,31 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import type { Viewport } from 'next';
+
 export const metadata: Metadata = {
-  title: "portfolio-apiwat",
-  description: "Web profile",
+  title: {
+    default: "Aphiwat On-at — Software Developer Portfolio",
+    template: "%s | Aphiwat On-at",
+  },
+  description: "Student developer at KMUTNB building modern web experiences with Next.js, React, and full-stack technologies.",
+  openGraph: {
+    title: "Aphiwat On-at — Software Developer Portfolio",
+    description: "Student developer building modern web experiences.",
+    type: "website",
+  },
   icons: {
     icon: "/logo.png",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#DBEAFE" },
+    { media: "(prefers-color-scheme: dark)", color: "#0D0D0D" },
+  ],
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";

@@ -66,7 +66,7 @@ Designed database models and API endpoints using PostgreSQL and Prisma ORM."
             { label: "JWT" },
             { label: "Docker" },
           ]}
-          image={bitbite.src} // optional
+          image={bitbite} // optional
         />
         <ExperienceCard
           date="2026 — personal project"
@@ -81,7 +81,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "TypeScript" },
             { label: "Rick and Morty REST API" },
           ]}
-          image={rickAndMortyImage.src} // optional
+          image={rickAndMortyImage} // optional
         />
         <ExperienceCard
           date="2024 — personal project"
@@ -96,7 +96,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "IntelliJ IDEA" },
             { label: "MySQL Workbench" },
           ]}
-          image={image1.src} // optional
+          image={image1} // optional
         />
         <ExperienceCard
           date="2024 — personal project"
@@ -109,7 +109,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "C++" },
             { label: "visual Studio Code" },
           ]}
-          image={image2.src} // optional
+          image={image2} // optional
         />
       </motion.div>
 

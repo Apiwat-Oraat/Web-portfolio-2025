@@ -82,6 +82,8 @@ export default function ExperienceCard({
             alt={position}
             width={272}
             height={160}
+            sizes="(max-width: 768px) 100vw, 272px"
+            placeholder="blur"
             className="w-full max-w-[272px] h-36 object-cover rounded-xl border border-[#2D7FF9]/25
                  transition-transform duration-500 hover:scale-105
                  md:h-40 md:max-w-none self-start md:self-end" // ✅ mobile จำกัดขนาดสูงสุด / md ปล่อยเต็ม

@@ -5,8 +5,13 @@ import TypingIntro from "@/components/TypingIntro";
 import RightSide from "@/components/RightSide";
 import LeftSide from "@/components/LeftSide";
 // import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
-import Background3D from "@/components/Background3D";
+import dynamic from "next/dynamic";
 import { ThemeToggle } from "@/components/ThemeToggle";
+
+const Background3D = dynamic(() => import("@/components/Background3D"), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 bg-gradient-to-br from-[#f7f7fa] via-[#e2e8f0] to-[#f7f7fa] dark:from-[#000000] dark:via-[#000822] dark:to-[#000000]" />,
+});
 
 export default function Page() {
   const [slideOut, setSlideOut] = useState<boolean>(false);
