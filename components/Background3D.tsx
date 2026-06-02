@@ -14,7 +14,7 @@ const Background3D: React.FC = () => {
   const lightUrlString = "https://shadergradient.co/customize?animate=on&axesHelper=off&brightness=1.2&cAzimuthAngle=180&cDistance=3.6&cPolarAngle=90&cameraZoom=1&color1=%2399CFFF&color2=%23B3DCFF&color3=%23FAF2DF&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=50&rotationY=0&rotationZ=-60&shader=defaults&type=plane&uAmplitude=1&uDensity=1.3&uFrequency=5.5&uSpeed=0.4&uStrength=4&uTime=0&wireframe=false";
 
   return (
-    <div className="fixed inset-0 w-screen h-screen pointer-events-none z-0">
+    <div className="fixed inset-0 w-screen h-screen pointer-events-none z-0" style={{ viewTransitionName: 'bg3d-container' }}>
       {/* Dark Mode Canvas */}
       <div 
         className="absolute inset-0 w-full h-full pointer-events-none [&_*]:pointer-events-none [&>canvas]:absolute [&>canvas]:inset-0 [&>canvas]:w-full [&>canvas]:h-full [&>canvas]:object-cover"

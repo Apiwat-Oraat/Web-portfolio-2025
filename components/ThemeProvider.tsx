@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import { flushSync } from "react-dom";
 
 type Theme = "dark" | "light";
 
@@ -54,7 +55,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     );
 
     const transition = document.startViewTransition(() => {
-        setTheme(newTheme);
+        // ใช้ flushSync เพื่อบังคับให้ React อัปเดต DOM ทันทีก่อนที่เบราว์เซอร์จะถ่ายรูป
+        flushSync(() => {
+          setTheme(newTheme);
+        });
         localStorage.setItem("theme", newTheme);
         if (newTheme === "light") {
           document.documentElement.classList.remove("dark");
