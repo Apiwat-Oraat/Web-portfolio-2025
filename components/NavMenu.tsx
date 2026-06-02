@@ -17,11 +17,11 @@ export default function NavMenu({ active, onSelect }: NavMenuProps) {
   return (
     <>
       {/* Mobile Header */}
-      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex justify-between items-center px-5 py-3 rounded-full bg-white/5 backdrop-blur-2xl border border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.3)]">
-        <h1 className="text-lg font-bold text-[#FAFAFA] truncate">My Portfolio</h1>
+      <div className="md:hidden fixed top-4 left-4 right-4 z-50 flex justify-between items-center px-5 py-3 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-2xl border border-black/10 dark:border-white/20 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.3)] transition-colors duration-300">
+        <h1 className="text-lg font-bold text-zinc-900 dark:text-[#FAFAFA] truncate transition-colors duration-300">My Portfolio</h1>
         <button
           onClick={() => setOpen(!open)}
-          className="text-[#2D7FF9] hover:text-[#FAFAFA] transition flex-shrink-0"
+          className="text-[#2D7FF9] hover:text-zinc-900 dark:hover:text-[#FAFAFA] transition flex-shrink-0"
         >
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -37,7 +37,7 @@ export default function NavMenu({ active, onSelect }: NavMenuProps) {
 
       {/* Navigation Menu */}
       <nav
-        className={`flex flex-col md:flex md:flex-col gap-4 md:w-48 bg-white/5 backdrop-blur-xl border border-white/20 md:border-none md:backdrop-blur-none md:bg-transparent rounded-2xl md:rounded-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.3)] md:shadow-none
+        className={`flex flex-col md:flex md:flex-col gap-4 md:w-48 bg-white/40 dark:bg-white/5 backdrop-blur-xl border border-black/5 dark:border-white/20 md:border-none md:dark:border-none md:backdrop-blur-none md:bg-transparent md:dark:bg-transparent rounded-2xl md:rounded-none shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.3)] md:shadow-none md:dark:shadow-none
           fixed md:static top-20 right-4 left-4 md:top-auto md:right-auto md:left-auto
           p-6 md:p-0 transition-all duration-500 ease-in-out z-40
           md:translate-x-0 md:opacity-100
@@ -58,7 +58,7 @@ export default function NavMenu({ active, onSelect }: NavMenuProps) {
                 setOpen(false);
               }}
               className={`group relative flex items-center gap-2 text-sm font-semibold tracking-widest transition-all duration-700 ease-out 
-                ${isActive ? "text-[#FAFAFA]" : "text-zinc-400 hover:text-[#FAFAFA]"}
+                ${isActive ? "text-zinc-900 dark:text-[#FAFAFA]" : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-[#FAFAFA]"}
               `}
             >
               <span

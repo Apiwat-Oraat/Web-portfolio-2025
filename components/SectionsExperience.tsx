@@ -38,10 +38,10 @@ export default function SectionsExperience({ setActiveSection }: SectionProps) {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-8 space-y-3 text-center md:text-left">
-          <h2 className="text-2xl font-semibold tracking-tight text-[#FAFAFA] md:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-[#FAFAFA] md:text-3xl transition-colors duration-300">
             Experience
           </h2>
-          <p className="mx-auto max-w-2xl text-sm leading-6 text-zinc-300 md:mx-0">
+          <p className="mx-auto max-w-2xl text-sm leading-6 text-zinc-600 dark:text-zinc-300 md:mx-0 transition-colors duration-300">
             Professional internship and work experience.
           </p>
         </div>

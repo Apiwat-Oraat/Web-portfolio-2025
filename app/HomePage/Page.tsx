@@ -5,7 +5,13 @@ import TypingIntro from "@/components/TypingIntro";
 import RightSide from "@/components/RightSide";
 import LeftSide from "@/components/LeftSide";
 // import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
-import Background3D from "@/components/Background3D";
+import dynamic from "next/dynamic";
+import { ThemeToggle } from "@/components/ThemeToggle";
+
+const Background3D = dynamic(() => import("@/components/Background3D"), {
+  ssr: false,
+  loading: () => <div className="fixed inset-0 bg-gradient-to-br from-[#f7f7fa] via-[#e2e8f0] to-[#f7f7fa] dark:from-[#000000] dark:via-[#000822] dark:to-[#000000]" />,
+});
 
 export default function Page() {
   const [slideOut, setSlideOut] = useState<boolean>(false);
@@ -70,8 +76,10 @@ export default function Page() {
       {/* Background 3D - Fixed & No Interaction */}
       <Background3D />
 
+      <ThemeToggle />
+
       {/* Gradient Overlay - Fixed */}
-      <div className="fixed inset-0 bg-[#0D0D0D]/55 pointer-events-none z-10" />
+      <div className="fixed inset-0 bg-white/30 dark:bg-[#0D0D0D]/55 pointer-events-none z-10" />
 
       {/* Layout Container */}
       <div className="relative flex flex-col md:flex-row z-20 p-5 md:p-15 min-h-screen">

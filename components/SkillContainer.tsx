@@ -13,6 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { AnimatedList } from "@/components/ui/animated-list";
 import { cn } from "@/lib/utils";
 import { useSectionReplay } from "./useSectionReplay";
+import { useTheme } from "./ThemeProvider";
 
 type StackIconProps = {
   name: string;
@@ -52,7 +53,7 @@ const skillGroups: SkillGroup[] = [
     status: "Primary",
     time: "Core",
     accent: "#2D7FF9",
-    iconClassName: "text-[#FAFAFA]",
+    iconClassName: "text-white",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
   },
   {
@@ -61,7 +62,7 @@ const skillGroups: SkillGroup[] = [
     status: "Building",
     time: "API",
     accent: "#3B82F6",
-    iconClassName: "text-[#FAFAFA]",
+    iconClassName: "text-white",
     skills: ["Node.js", "JavaScript", "Express", "JWT", "Java", "PHP"],
   },
   {
@@ -70,7 +71,7 @@ const skillGroups: SkillGroup[] = [
     status: "Active",
     time: "Data",
     accent: "#1D4ED8",
-    iconClassName: "text-[#FAFAFA]",
+    iconClassName: "text-white",
     skills: ["PostgreSQL", "MySQL", "Prisma"],
   },
   {
@@ -79,7 +80,7 @@ const skillGroups: SkillGroup[] = [
     status: "Daily",
     time: "Flow",
     accent: "#0F2A66",
-    iconClassName: "text-[#FAFAFA]",
+    iconClassName: "text-white",
     skills: ["Git", "GitHub", "GitLab", "Postman", "Docker", "Vercel", "DBeaver", "VS Code", "IntelliJ IDEA"],
   },
 ];
@@ -158,17 +159,18 @@ const techIcons: Record<string, TechIconConfig> = {
 
 function TechIcon({ label }: { label: string }) {
   const icon = techIcons[label];
+  const { theme } = useTheme();
 
   if (!icon) {
     return null;
   }
 
   return (
-    <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#0D0D0D]/65 p-1 shadow-[0_0_16px_rgba(250,250,250,0.14)] ring-1 ring-white/15">
+    <span className="inline-flex size-7 shrink-0 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-white/60 dark:bg-[#0D0D0D]/65 p-1 shadow-[0_0_16px_rgba(0,0,0,0.05)] dark:shadow-[0_0_16px_rgba(250,250,250,0.14)] ring-1 ring-black/5 dark:ring-white/15">
       {icon.name ? (
         <StackIcon
           name={icon.name}
-          variant="dark"
+          variant={theme === "dark" ? "dark" : "light"}
           className="size-5"
         />
       ) : icon.custom === "jwt" ? (
@@ -276,7 +278,7 @@ function IntelliJIcon() {
 
 function TechBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-transparent py-1 pl-1 pr-2.5 text-[11px] font-medium text-zinc-400 transition-colors duration-300 hover:border-[#FAFAFA]/35 hover:text-[#FAFAFA]">
+    <span className="inline-flex items-center gap-2 rounded-full border border-black/10 dark:border-white/10 bg-transparent py-1 pl-1 pr-2.5 text-[11px] font-medium text-zinc-600 dark:text-zinc-400 transition-colors duration-300 hover:border-zinc-400 dark:hover:border-[#FAFAFA]/35 hover:text-zinc-900 dark:hover:text-[#FAFAFA]">
       <TechIcon label={label} />
       {label}
     </span>
@@ -292,15 +294,15 @@ function SkillNotificationCard({
   return (
     <figure
       className={cn(
-        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-white/20 bg-white/5 p-3 text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:border-white/30",
+        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-white/50 dark:border-white/20 bg-white/30 dark:bg-white/5 p-3 text-zinc-900 dark:text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-2xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-white/10 hover:border-white/70 dark:hover:border-white/30",
         "dark:[box-shadow:0_-20px_80px_-20px_rgba(250,250,250,0.12)_inset]",
-        "before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:before:left-[120%] hover:before:opacity-100"
+        "before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)] dark:before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:before:left-[120%] hover:before:opacity-100"
       )}
     >
       <div className="relative z-10 flex flex-row items-start gap-3">
         <div
           className={cn(
-            "flex size-9 shrink-0 items-center justify-center rounded-full border border-white/10 shadow-[0_0_12px_rgba(165,140,244,0.12)]",
+            "flex size-9 shrink-0 items-center justify-center rounded-full border border-white/20 shadow-[0_0_12px_rgba(165,140,244,0.12)]",
             group.iconClassName
           )}
           style={{ backgroundColor: group.accent }}
@@ -309,10 +311,10 @@ function SkillNotificationCard({
         </div>
 
         <div className="min-w-0 flex-1 overflow-hidden">
-          <figcaption className="flex flex-wrap items-center gap-x-2 gap-y-1 font-medium text-[#FAFAFA]">
+          <figcaption className="flex flex-wrap items-center gap-x-2 gap-y-1 font-medium text-zinc-900 dark:text-[#FAFAFA]">
             <span className="text-sm">{group.title}</span>
             <span className="text-[11px] text-zinc-500">{group.time}</span>
-            <span className="ml-auto rounded-full border border-white/10 bg-transparent px-2 py-0.5 text-[10px] font-medium text-zinc-400">
+            <span className="ml-auto rounded-full border border-black/10 dark:border-white/10 bg-transparent px-2 py-0.5 text-[10px] font-medium text-zinc-500 dark:text-zinc-400">
               {group.status}
             </span>
           </figcaption>
@@ -338,7 +340,7 @@ function SkillContainer() {
   const animatedGroups = [...skillGroups].reverse();
 
   return (
-    <div ref={ref} className="relative mx-auto max-w-2xl text-[#FAFAFA]">
+    <div ref={ref} className="relative mx-auto max-w-2xl text-zinc-900 dark:text-[#FAFAFA]">
       <div className="relative min-h-[820px] w-full overflow-visible p-1.5 md:min-h-[620px]">
         {inView && (
           <AnimatedList key={replayKey} delay={420} className="gap-3">

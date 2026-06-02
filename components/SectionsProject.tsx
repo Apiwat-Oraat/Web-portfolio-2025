@@ -41,10 +41,10 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-3 space-y-2 text-center md:text-left">
-          <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-[#FAFAFA] md:text-4xl transition-colors">
             Projects
           </h2>
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-400 md:mx-0 md:text-base">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:mx-0 md:text-base transition-colors">
             Selected software projects built across web applications, APIs, and desktop systems.
           </p>
         </div>
@@ -66,7 +66,7 @@ Designed database models and API endpoints using PostgreSQL and Prisma ORM."
             { label: "JWT" },
             { label: "Docker" },
           ]}
-          image={bitbite.src} // optional
+          image={bitbite} // optional
         />
         <ExperienceCard
           date="2026 — personal project"
@@ -81,7 +81,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "TypeScript" },
             { label: "Rick and Morty REST API" },
           ]}
-          image={rickAndMortyImage.src} // optional
+          image={rickAndMortyImage} // optional
         />
         <ExperienceCard
           date="2024 — personal project"
@@ -96,7 +96,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "IntelliJ IDEA" },
             { label: "MySQL Workbench" },
           ]}
-          image={image1.src} // optional
+          image={image1} // optional
         />
         <ExperienceCard
           date="2024 — personal project"
@@ -109,7 +109,7 @@ This application leverages the Rick and Morty API to provide a rich and interact
             { label: "C++" },
             { label: "visual Studio Code" },
           ]}
-          image={image2.src} // optional
+          image={image2} // optional
         />
       </motion.div>
 

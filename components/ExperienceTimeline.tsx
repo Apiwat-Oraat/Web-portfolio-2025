@@ -46,7 +46,7 @@ const experiences: ExperienceItem[] = [
     ],
     icon: Building2,
     imageLogo: "/mie-logo.png",
-    gradientClass: "bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#1E3A8A]",
+    gradientClass: "bg-gradient-to-br from-[#0B7EFF] via-[#68B2FF] to-[#A0D8FF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
   {
     position: "Production Intern",
@@ -60,7 +60,7 @@ const experiences: ExperienceItem[] = [
     technologies: ["Manufacturing", "Production Line"],
     icon: Factory,
     imageLogo: "/misu-logo.png",
-    gradientClass: "bg-gradient-to-br from-[#020617] via-[#0B1B3D] to-[#1D4ED8]",
+    gradientClass: "bg-gradient-to-br from-[#0066FF] via-[#5CB2FF] to-[#BFE0FF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
   {
     position: "Graphic Design Intern",
@@ -74,7 +74,7 @@ const experiences: ExperienceItem[] = [
     ],
     technologies: ["Graphic Design", "Print Production", "Layout Design"],
     icon: Store,
-    gradientClass: "bg-gradient-to-br from-[#020617] via-[#060D20] to-[#11265C]",
+    gradientClass: "bg-gradient-to-br from-[#007BFF] via-[#4DA8FF] to-[#99CFFF] dark:from-[#040914] dark:via-[#1442A0] dark:to-[#B9CDE8] transition-colors duration-500",
   },
 ];
 
@@ -119,14 +119,14 @@ export function ExperienceCard({
     >
       {/* Timeline Marker (Desktop only) */}
       <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex size-6 items-center justify-center">
-        <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
-          <span className="size-3 rounded-full bg-gradient-to-b from-[#3B82F6] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+        <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-black/10 dark:bg-white/10 shadow-[0_0_14px_rgba(0,0,0,0.1)] dark:shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+          <span className="size-3 rounded-full bg-gradient-to-b from-[#2D7FF9] via-[#60A5FA] to-[#93C5FD] dark:from-[#3B82F6] dark:via-[#D7D8DF] dark:to-[#9B9CA6] shadow-[0_0_8px_rgba(45,127,249,0.4)] dark:shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
         </span>
       </div>
 
       {/* Card Form */}
       <div className="w-full md:w-[46%]">
-        <div className="relative overflow-hidden rounded-[24px] border border-white/20 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100">
+        <div className="relative overflow-hidden rounded-[24px] border border-white/50 dark:border-white/20 bg-white/30 dark:bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-2xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)] dark:before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/40 dark:hover:bg-white/10 hover:border-white/70 dark:hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100">
           {/* Header part with gradient */}
           <div className={cn("p-6 relative", gradientClass)}>
             {/* External Link */}
@@ -135,28 +135,28 @@ export function ExperienceCard({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-5 right-5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:border-[#2D7FF9] hover:bg-[#2D7FF9]/10 hover:text-[#2D7FF9] backdrop-blur-sm z-20"
+                className="absolute top-5 right-5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 transition-all duration-300 hover:border-[#2D7FF9] hover:bg-[#2D7FF9]/10 hover:text-[#2D7FF9] backdrop-blur-sm z-20"
               >
                 <ExternalLink size={14} />
               </a>
             )}
-            
+
             <div className="flex gap-4 items-start pr-8">
-              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0 overflow-hidden">
+              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0 overflow-hidden transition-colors duration-300">
                 {imageLogo ? (
-                  <Image src={imageLogo} alt={`${company} logo`} width={48} height={48} className="w-full h-full object-contain p-1 bg-white" unoptimized />
+                  <Image src={imageLogo} alt={`${company} logo`} width={48} height={48} sizes="48px" className="w-full h-full object-contain p-1 bg-white" />
                 ) : (
                   <Icon className="w-6 h-6" strokeWidth={1.5} />
                 )}
               </div>
               <div className="flex-1">
-                <h3 className="text-[18px] font-bold text-white tracking-tight leading-tight mb-1">
+                <h3 className="text-[18px] font-bold text-white tracking-tight leading-tight mb-1 transition-colors duration-300">
                   {title}
                 </h3>
-                <p className="text-[14px] font-medium text-white/90">
+                <p className="text-[14px] font-medium text-white/90 transition-colors duration-300">
                   {company}
                 </p>
-                <div className="flex items-center gap-1 text-[13px] text-white/80 mt-2 font-medium">
+                <div className="flex items-center gap-1 text-[13px] text-white/80 mt-2 font-medium transition-colors duration-300">
                   <MapPin className="w-3.5 h-3.5 shrink-0" />
                   <span>{location}</span>
                 </div>
@@ -165,14 +165,14 @@ export function ExperienceCard({
           </div>
 
           {/* Body part details (Glassy transparent) */}
-          <div className="bg-black/20 p-6 pt-4 space-y-1">
+          <div className="bg-black/5 dark:bg-black/20 p-6 pt-4 space-y-1 transition-colors duration-300">
             {/* Details Accordion */}
-            <div className="border-t border-white/5 pt-3">
+            <div className="border-t border-black/5 dark:border-white/5 pt-3">
               <button
                 onClick={() => setDetailsOpen(!detailsOpen)}
                 className="flex justify-between items-center w-full group/btn py-1"
               >
-                <span className="font-semibold text-[14px] text-zinc-300 group-hover/btn:text-white transition-colors">
+                <span className="font-semibold text-[14px] text-zinc-600 dark:text-zinc-300 group-hover/btn:text-zinc-900 dark:group-hover/btn:text-white transition-colors">
                   Details
                 </span>
                 <motion.div
@@ -190,8 +190,8 @@ export function ExperienceCard({
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="text-[14px] text-zinc-400 mt-3 pb-2">
-                      <ul className="list-disc pl-5 space-y-1.5 marker:text-zinc-600">
+                    <div className="text-[14px] text-zinc-600 dark:text-zinc-400 mt-3 pb-2 transition-colors duration-300">
+                      <ul className="list-disc pl-5 space-y-1.5 marker:text-zinc-400 dark:marker:text-zinc-600">
                         {details.length > 0 ? (
                           details.map((d, i) => <li key={i}>{d}</li>)
                         ) : (
@@ -205,12 +205,12 @@ export function ExperienceCard({
             </div>
 
             {/* Technologies Accordion */}
-            <div className="border-t border-white/5 pt-3">
+            <div className="border-t border-black/5 dark:border-white/5 pt-3">
               <button
                 onClick={() => setTechOpen(!techOpen)}
                 className="flex justify-between items-center w-full group/btn py-1"
               >
-                <span className="font-semibold text-[14px] text-zinc-300 group-hover/btn:text-white transition-colors">
+                <span className="font-semibold text-[14px] text-zinc-600 dark:text-zinc-300 group-hover/btn:text-zinc-900 dark:group-hover/btn:text-white transition-colors">
                   Technologies
                 </span>
                 <motion.div
@@ -233,7 +233,7 @@ export function ExperienceCard({
                         technologies.map((t, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-white/5 text-zinc-300 border border-white/10 rounded-full text-[12px] font-medium tracking-wide"
+                            className="px-3 py-1 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-white/10 rounded-full text-[12px] font-medium tracking-wide transition-colors"
                           >
                             {t}
                           </span>
@@ -265,10 +265,10 @@ export function ExperienceCard({
             align === "right" ? "items-start md:items-end" : "items-start"
           )}
         >
-          <span className="px-3.5 py-1 bg-transparent border border-white/10 rounded-full text-[12px] font-semibold text-zinc-400">
+          <span className="px-3.5 py-1 bg-transparent border border-black/10 dark:border-white/10 rounded-full text-[12px] font-semibold text-zinc-500 dark:text-zinc-400 transition-colors">
             {badgeText}
           </span>
-          <span className="text-[18px] font-semibold text-zinc-200 tracking-tight">
+          <span className="text-[18px] font-semibold text-zinc-800 dark:text-zinc-200 tracking-tight transition-colors">
             {dateRange}
           </span>
         </div>
@@ -281,10 +281,10 @@ export default function ExperienceTimeline() {
   return (
     <div className="relative flex flex-col items-center w-full max-w-4xl mx-auto py-8">
       {/* Continuous Center Line (Desktop) */}
-      <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-transparent via-[#BFC0C7]/35 to-transparent shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
+      <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-transparent via-zinc-300 dark:via-[#BFC0C7]/35 to-transparent shadow-sm dark:shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
 
       {/* Continuous Left Line (Mobile) */}
-      <div className="md:hidden absolute top-0 bottom-0 left-[22px] w-px bg-gradient-to-b from-transparent via-[#BFC0C7]/35 to-transparent" />
+      <div className="md:hidden absolute top-0 bottom-0 left-[22px] w-px bg-gradient-to-b from-transparent via-zinc-300 dark:via-[#BFC0C7]/35 to-transparent" />
 
       <div className="flex flex-col gap-12 md:gap-16 w-full">
         {experiences.map((exp, index) => {
@@ -305,8 +305,8 @@ export default function ExperienceTimeline() {
             >
               {/* Left Dot (Mobile) */}
               <div className="absolute md:hidden left-[22px] top-6 -translate-x-1/2 -translate-y-1/2 flex size-6 items-center justify-center z-10">
-                <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
-                  <span className="size-3 rounded-full bg-gradient-to-b from-[#3B82F6] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+                <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-black/10 dark:bg-white/10 shadow-[0_0_14px_rgba(0,0,0,0.1)] dark:shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+                  <span className="size-3 rounded-full bg-gradient-to-b from-[#2D7FF9] via-[#60A5FA] to-[#93C5FD] dark:from-[#3B82F6] dark:via-[#D7D8DF] dark:to-[#9B9CA6] shadow-[0_0_8px_rgba(45,127,249,0.4)] dark:shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
                 </span>
               </div>
 

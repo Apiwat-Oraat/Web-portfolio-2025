@@ -9,14 +9,11 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@heroui/navbar": "^2.2.25",
-    "@heroui/react": "^2.8.5",
     "@radix-ui/react-slot": "^1.2.4",
     "@react-spring/three": "^10.0.3",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.4.2",
     "@shadergradient/react": "^2.4.20",
-    "@splinetool/react-spline": "^4.1.0",
     "@types/canvas-confetti": "^1.9.0",
     "camera-controls": "^3.1.2",
     "canvas-confetti": "^1.9.4",
