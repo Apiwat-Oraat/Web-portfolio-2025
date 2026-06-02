@@ -13,6 +13,7 @@ import { useInView } from "react-intersection-observer";
 import { AnimatedList } from "@/components/ui/animated-list";
 import { cn } from "@/lib/utils";
 import { useSectionReplay } from "./useSectionReplay";
+import { useTheme } from "./ThemeProvider";
 
 type StackIconProps = {
   name: string;
@@ -158,6 +159,7 @@ const techIcons: Record<string, TechIconConfig> = {
 
 function TechIcon({ label }: { label: string }) {
   const icon = techIcons[label];
+  const { theme } = useTheme();
 
   if (!icon) {
     return null;
@@ -168,7 +170,7 @@ function TechIcon({ label }: { label: string }) {
       {icon.name ? (
         <StackIcon
           name={icon.name}
-          variant="dark"
+          variant={theme === "dark" ? "dark" : "light"}
           className="size-5"
         />
       ) : icon.custom === "jwt" ? (
@@ -338,7 +340,7 @@ function SkillContainer() {
   const animatedGroups = [...skillGroups].reverse();
 
   return (
-    <div ref={ref} className="relative mx-auto max-w-2xl text-[#FAFAFA]">
+    <div ref={ref} className="relative mx-auto max-w-2xl text-zinc-900 dark:text-[#FAFAFA]">
       <div className="relative min-h-[820px] w-full overflow-visible p-1.5 md:min-h-[620px]">
         {inView && (
           <AnimatedList key={replayKey} delay={420} className="gap-3">

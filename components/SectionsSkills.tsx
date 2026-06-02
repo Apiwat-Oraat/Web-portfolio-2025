@@ -30,10 +30,10 @@ export default function SectionsSkills({ setActiveSection }: SectionProps) {
       className="mb-1 w-full max-w-3xl scroll-mt-25 px-1 md:mb-1"
     >
       <div className="mb-4 space-y-2 text-center md:text-left">
-        <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] md:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-[#FAFAFA] md:text-4xl transition-colors duration-300">
           Skills
         </h2>
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-400 md:mx-0 md:text-base">
+        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:mx-0 md:text-base transition-colors duration-300">
           Tools and technologies I use to build full-stack software.
         </p>
       </div>
