@@ -1,3 +1,5 @@
+"use client";
+
 import SkillContainer from "./SkillContainer";
 import { useInView } from "react-intersection-observer";
 import React, { useEffect } from "react";
