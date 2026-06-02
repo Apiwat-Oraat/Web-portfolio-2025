@@ -19,10 +19,10 @@ export function ThemeToggle() {
     <button
       onClick={handleClick}
       disabled={isAnimating}
-      className="fixed top-4 right-4 md:top-6 md:right-6 z-[60] flex items-center justify-center p-3 rounded-full bg-white/20 dark:bg-black/20 backdrop-blur-md border border-black/10 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-all shadow-lg overflow-hidden group hover:scale-110 active:scale-95"
+      className="fixed bottom-6 right-6 md:top-5 md:bottom-auto md:right-5 z-[60] flex items-center justify-center w-10 h-10 md:w-8 md:h-8 rounded-full bg-white/30 dark:bg-black/30 backdrop-blur-md border border-black/5 dark:border-white/10 text-zinc-700 dark:text-zinc-300 hover:bg-white/50 dark:hover:bg-black/50 hover:scale-110 active:scale-95 transition-all duration-300 shadow-sm"
       aria-label="Toggle Theme"
     >
-      <div className="relative w-6 h-6 flex items-center justify-center">
+      <div className="relative w-5 h-5 md:w-4 md:h-4 flex items-center justify-center">
         <motion.div
           initial={false}
           animate={{
@@ -31,9 +31,9 @@ export function ThemeToggle() {
             rotate: theme === "dark" ? 0 : -90,
           }}
           transition={{ duration: 0.4, ease: "backOut" }}
-          className="absolute"
+          className="absolute flex items-center justify-center"
         >
-          <Moon size={24} />
+          <Moon className="w-5 h-5 md:w-4 md:h-4" strokeWidth={2.5} />
         </motion.div>
         <motion.div
           initial={false}
@@ -43,9 +43,9 @@ export function ThemeToggle() {
             rotate: theme === "light" ? 0 : 90,
           }}
           transition={{ duration: 0.4, ease: "backOut" }}
-          className="absolute"
+          className="absolute flex items-center justify-center"
         >
-          <Sun size={24} />
+          <Sun className="w-5 h-5 md:w-4 md:h-4" strokeWidth={2.5} />
         </motion.div>
       </div>
     </button>
