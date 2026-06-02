@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, MapPin, Building2, Factory, Printer, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, MapPin, Building2, Factory, Store, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -15,6 +16,7 @@ interface ExperienceItem {
   technologies: string[];
   link?: string;
   icon: React.ElementType;
+  imageLogo?: string;
   gradientClass: string;
 }
 
@@ -43,6 +45,7 @@ const experiences: ExperienceItem[] = [
       "Kotlin",
     ],
     icon: Building2,
+    imageLogo: "/mie-logo.png",
     gradientClass: "bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#1E3A8A]",
   },
   {
@@ -56,6 +59,7 @@ const experiences: ExperienceItem[] = [
     ],
     technologies: ["Manufacturing", "Production Line"],
     icon: Factory,
+    imageLogo: "/misu-logo.png",
     gradientClass: "bg-gradient-to-br from-[#020617] via-[#0B1B3D] to-[#1D4ED8]",
   },
   {
@@ -69,7 +73,7 @@ const experiences: ExperienceItem[] = [
       "Executed print production tasks, including bookbinding and layout design.",
     ],
     technologies: ["Graphic Design", "Print Production", "Layout Design"],
-    icon: Printer,
+    icon: Store,
     gradientClass: "bg-gradient-to-br from-[#020617] via-[#060D20] to-[#11265C]",
   },
 ];
@@ -82,6 +86,7 @@ export interface ExperienceCardProps {
   badgeText: string;
   align?: "left" | "right";
   icon: React.ElementType;
+  imageLogo?: string;
   gradientClass: string;
   details?: string[];
   technologies?: string[];
@@ -96,6 +101,7 @@ export function ExperienceCard({
   badgeText,
   align = "left",
   icon: Icon,
+  imageLogo,
   gradientClass,
   details = [],
   technologies = [],
@@ -129,15 +135,19 @@ export function ExperienceCard({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="absolute top-5 right-5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 hover:bg-white/30 transition-colors text-white backdrop-blur-sm shadow-sm z-20"
+                className="absolute top-5 right-5 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:border-[#2D7FF9] hover:bg-[#2D7FF9]/10 hover:text-[#2D7FF9] backdrop-blur-sm z-20"
               >
                 <ExternalLink size={14} />
               </a>
             )}
             
             <div className="flex gap-4 items-start pr-8">
-              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0">
-                <Icon className="w-6 h-6" strokeWidth={1.5} />
+              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center text-white border border-white/30 shrink-0 overflow-hidden">
+                {imageLogo ? (
+                  <Image src={imageLogo} alt={`${company} logo`} width={48} height={48} className="w-full h-full object-contain p-1 bg-white" unoptimized />
+                ) : (
+                  <Icon className="w-6 h-6" strokeWidth={1.5} />
+                )}
               </div>
               <div className="flex-1">
                 <h3 className="text-[18px] font-bold text-white tracking-tight leading-tight mb-1">
@@ -308,6 +318,7 @@ export default function ExperienceTimeline() {
                 badgeText={exp.badge}
                 align={isLeft ? "left" : "right"}
                 icon={exp.icon}
+                imageLogo={exp.imageLogo}
                 gradientClass={exp.gradientClass}
                 details={exp.description}
                 technologies={exp.technologies}

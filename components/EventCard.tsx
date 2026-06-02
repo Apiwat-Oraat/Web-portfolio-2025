@@ -75,7 +75,20 @@ const EventCard: React.FC<EventCardProps> = ({
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="relative min-h-[220px] overflow-hidden rounded-2xl rounded-br-[64px] border border-white/20 bg-white/5 p-3 text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-500 before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100 md:min-h-[214px] md:p-3.5"
         >
-          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start">
+          {/* External Link */}
+          {link && (
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${title} website`}
+              className="absolute top-3 right-3 z-20 inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/5 text-zinc-400 transition-all duration-300 hover:border-[#2D7FF9] hover:bg-[#2D7FF9]/10 hover:text-[#2D7FF9] md:top-4 md:right-4"
+            >
+              <ExternalLink size={14} />
+            </a>
+          )}
+
+          <div className="relative z-10 flex flex-col gap-4 sm:flex-row sm:items-start pr-12 md:pr-14">
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/10 p-2">
               <Image
                 src={logo}
@@ -88,41 +101,14 @@ const EventCard: React.FC<EventCardProps> = ({
             </div>
 
             <div className="min-w-0 flex-1 space-y-3">
-              <div className="flex flex-col gap-2.5 sm:flex-row sm:items-start sm:justify-between">
-                <div className="space-y-2.5">
-                  <div className="flex flex-wrap items-center gap-2.5 text-xs text-zinc-400">
-                    <span className="rounded-full border border-white/10 bg-transparent px-2.5 py-0.5 text-zinc-400">
-                      Education
-                    </span>
-                    <span className="rounded-full border border-white/10 bg-transparent px-2.5 py-0.5 text-zinc-400">
-                      {badge}
-                    </span>
-                    <span>{date}</span>
-                  </div>
-
-                  <div className="space-y-2">
-                    <h3 className="text-lg font-semibold leading-snug text-[#FAFAFA] md:text-lg">
-                      {title}
-                    </h3>
-                    <div className="flex items-center gap-2 text-xs text-zinc-400 md:text-sm">
-                      <MapPin
-                        size={15}
-                        className="shrink-0 text-[#2D7FF9]"
-                      />
-                      <span>{location}</span>
-                    </div>
-                  </div>
+              <div className="flex flex-col gap-1.5">
+                <h3 className="text-base font-bold leading-snug text-[#FAFAFA] md:text-lg">
+                  {title}
+                </h3>
+                <div className="flex items-center gap-1.5 text-xs text-zinc-400 md:text-sm">
+                  <MapPin size={14} className="shrink-0 text-[#2D7FF9]" />
+                  <span className="truncate">{location}</span>
                 </div>
-
-                <a
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open ${title} website`}
-                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-[#2D7FF9]/35 text-zinc-200 transition-all duration-300 hover:border-[#2D7FF9] hover:text-[#2D7FF9]"
-                >
-                  <ExternalLink size={15} />
-                </a>
               </div>
 
               <p className="text-xs leading-relaxed text-zinc-400 md:text-sm">
