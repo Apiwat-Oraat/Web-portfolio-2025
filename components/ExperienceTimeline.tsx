@@ -119,14 +119,14 @@ export function ExperienceCard({
     >
       {/* Timeline Marker (Desktop only) */}
       <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex size-6 items-center justify-center">
-        <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
+        <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-black/10 dark:bg-white/10 shadow-[0_0_14px_rgba(0,0,0,0.1)] dark:shadow-[0_0_14px_rgba(250,250,250,0.18)]">
           <span className="size-3 rounded-full bg-gradient-to-b from-[#3B82F6] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
         </span>
       </div>
 
       {/* Card Form */}
       <div className="w-full md:w-[46%]">
-        <div className="relative overflow-hidden rounded-[24px] border border-white/20 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100">
+        <div className="relative overflow-hidden rounded-[24px] border border-black/10 dark:border-white/20 bg-white/40 dark:bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/60 dark:hover:bg-white/10 hover:border-black/20 dark:hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100">
           {/* Header part with gradient */}
           <div className={cn("p-6 relative", gradientClass)}>
             {/* External Link */}
@@ -165,14 +165,14 @@ export function ExperienceCard({
           </div>
 
           {/* Body part details (Glassy transparent) */}
-          <div className="bg-black/20 p-6 pt-4 space-y-1">
+          <div className="bg-black/5 dark:bg-black/20 p-6 pt-4 space-y-1 transition-colors duration-300">
             {/* Details Accordion */}
-            <div className="border-t border-white/5 pt-3">
+            <div className="border-t border-black/5 dark:border-white/5 pt-3">
               <button
                 onClick={() => setDetailsOpen(!detailsOpen)}
                 className="flex justify-between items-center w-full group/btn py-1"
               >
-                <span className="font-semibold text-[14px] text-zinc-300 group-hover/btn:text-white transition-colors">
+                <span className="font-semibold text-[14px] text-zinc-600 dark:text-zinc-300 group-hover/btn:text-zinc-900 dark:group-hover/btn:text-white transition-colors">
                   Details
                 </span>
                 <motion.div
@@ -190,8 +190,8 @@ export function ExperienceCard({
                     exit={{ height: 0, opacity: 0 }}
                     className="overflow-hidden"
                   >
-                    <div className="text-[14px] text-zinc-400 mt-3 pb-2">
-                      <ul className="list-disc pl-5 space-y-1.5 marker:text-zinc-600">
+                    <div className="text-[14px] text-zinc-600 dark:text-zinc-400 mt-3 pb-2 transition-colors duration-300">
+                      <ul className="list-disc pl-5 space-y-1.5 marker:text-zinc-400 dark:marker:text-zinc-600">
                         {details.length > 0 ? (
                           details.map((d, i) => <li key={i}>{d}</li>)
                         ) : (
@@ -205,12 +205,12 @@ export function ExperienceCard({
             </div>
 
             {/* Technologies Accordion */}
-            <div className="border-t border-white/5 pt-3">
+            <div className="border-t border-black/5 dark:border-white/5 pt-3">
               <button
                 onClick={() => setTechOpen(!techOpen)}
                 className="flex justify-between items-center w-full group/btn py-1"
               >
-                <span className="font-semibold text-[14px] text-zinc-300 group-hover/btn:text-white transition-colors">
+                <span className="font-semibold text-[14px] text-zinc-600 dark:text-zinc-300 group-hover/btn:text-zinc-900 dark:group-hover/btn:text-white transition-colors">
                   Technologies
                 </span>
                 <motion.div
@@ -233,7 +233,7 @@ export function ExperienceCard({
                         technologies.map((t, i) => (
                           <span
                             key={i}
-                            className="px-3 py-1 bg-white/5 text-zinc-300 border border-white/10 rounded-full text-[12px] font-medium tracking-wide"
+                            className="px-3 py-1 bg-black/5 dark:bg-white/5 text-zinc-700 dark:text-zinc-300 border border-black/10 dark:border-white/10 rounded-full text-[12px] font-medium tracking-wide transition-colors"
                           >
                             {t}
                           </span>
@@ -265,10 +265,10 @@ export function ExperienceCard({
             align === "right" ? "items-start md:items-end" : "items-start"
           )}
         >
-          <span className="px-3.5 py-1 bg-transparent border border-white/10 rounded-full text-[12px] font-semibold text-zinc-400">
+          <span className="px-3.5 py-1 bg-transparent border border-black/10 dark:border-white/10 rounded-full text-[12px] font-semibold text-zinc-500 dark:text-zinc-400 transition-colors">
             {badgeText}
           </span>
-          <span className="text-[18px] font-semibold text-zinc-200 tracking-tight">
+          <span className="text-[18px] font-semibold text-zinc-800 dark:text-zinc-200 tracking-tight transition-colors">
             {dateRange}
           </span>
         </div>
@@ -281,10 +281,10 @@ export default function ExperienceTimeline() {
   return (
     <div className="relative flex flex-col items-center w-full max-w-4xl mx-auto py-8">
       {/* Continuous Center Line (Desktop) */}
-      <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-transparent via-[#BFC0C7]/35 to-transparent shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
+      <div className="hidden md:block absolute top-0 bottom-0 left-1/2 w-px bg-gradient-to-b from-transparent via-zinc-300 dark:via-[#BFC0C7]/35 to-transparent shadow-sm dark:shadow-[0_0_14px_rgba(250,250,250,0.14)]" />
 
       {/* Continuous Left Line (Mobile) */}
-      <div className="md:hidden absolute top-0 bottom-0 left-[22px] w-px bg-gradient-to-b from-transparent via-[#BFC0C7]/35 to-transparent" />
+      <div className="md:hidden absolute top-0 bottom-0 left-[22px] w-px bg-gradient-to-b from-transparent via-zinc-300 dark:via-[#BFC0C7]/35 to-transparent" />
 
       <div className="flex flex-col gap-12 md:gap-16 w-full">
         {experiences.map((exp, index) => {

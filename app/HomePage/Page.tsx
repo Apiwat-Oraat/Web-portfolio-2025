@@ -6,6 +6,7 @@ import RightSide from "@/components/RightSide";
 import LeftSide from "@/components/LeftSide";
 // import { ShaderGradientCanvas, ShaderGradient } from '@shadergradient/react'
 import Background3D from "@/components/Background3D";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export default function Page() {
   const [slideOut, setSlideOut] = useState<boolean>(false);
@@ -70,8 +71,10 @@ export default function Page() {
       {/* Background 3D - Fixed & No Interaction */}
       <Background3D />
 
+      <ThemeToggle />
+
       {/* Gradient Overlay - Fixed */}
-      <div className="fixed inset-0 bg-[#0D0D0D]/55 pointer-events-none z-10" />
+      <div className="fixed inset-0 bg-white/30 dark:bg-[#0D0D0D]/55 pointer-events-none z-10" />
 
       {/* Layout Container */}
       <div className="relative flex flex-col md:flex-row z-20 p-5 md:p-15 min-h-screen">

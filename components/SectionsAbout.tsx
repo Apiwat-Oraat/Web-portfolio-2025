@@ -38,20 +38,20 @@ export default function SectionsAbout({ setActiveSection }: SectionProps) {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <h1
-          className="text-3xl sm:text-4xl md:text-[42px] font-bold text-[#FAFAFA] tracking-tight leading-tight mb-8"
+          className="text-3xl sm:text-4xl md:text-[42px] font-bold text-zinc-900 dark:text-[#FAFAFA] tracking-tight leading-tight mb-8 transition-colors duration-300"
         >
           Hi, I&apos;m Apiwat.
           A student developer <br className="hidden sm:block" />
           <CoolMode><a className="text-[#2D7FF9] cursor-pointer">building modern web experiences.</a></CoolMode>
         </h1>
 
-        <p className="text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed">
+        <p className="text-zinc-600 dark:text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed transition-colors duration-300">
           I&apos;m currently a student in the Bachelor of Industrial Technology Program in
           Information Technology at King Mongkut&apos;s University of Technology North
           Bangkok (KMUTNB).
         </p>
 
-        <p className="text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed mt-5">
+        <p className="text-zinc-600 dark:text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed mt-5 transition-colors duration-300">
           My academic focus is on software development and database systems.
           I&apos;m always ready to learn and am currently diving deeper into web
           development, exploring how to build responsive interfaces that connect
@@ -59,7 +59,7 @@ export default function SectionsAbout({ setActiveSection }: SectionProps) {
 
         </p>
 
-        <p className="text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed mt-5">
+        <p className="text-zinc-600 dark:text-zinc-300 text-[15px] sm:text-base font-sans leading-relaxed mt-5 transition-colors duration-300">
           I am passionate about applying my skills to new projects and am always
           looking for opportunities to improve myself. I&apos;m excited to see how
           technology and design can shape better digital interactions.

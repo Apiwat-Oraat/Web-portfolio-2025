@@ -41,10 +41,10 @@ export default function SectionsProject({ setActiveSection }: SectionProps) {
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <div className="mb-3 space-y-2 text-center md:text-left">
-          <h2 className="text-3xl font-semibold tracking-tight text-[#FAFAFA] md:text-4xl">
+          <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 dark:text-[#FAFAFA] md:text-4xl transition-colors">
             Projects
           </h2>
-          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-400 md:mx-0 md:text-base">
+          <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 md:mx-0 md:text-base transition-colors">
             Selected software projects built across web applications, APIs, and desktop systems.
           </p>
         </div>
