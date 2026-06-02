@@ -294,9 +294,9 @@ function SkillNotificationCard({
   return (
     <figure
       className={cn(
-        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-black/10 dark:border-white/20 bg-white/40 dark:bg-white/5 p-3 text-zinc-900 dark:text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),0_8px_32px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 hover:bg-white/60 dark:hover:bg-white/10 hover:border-black/20 dark:hover:border-white/30",
+        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-white/50 dark:border-white/20 bg-white/30 dark:bg-white/5 p-3 text-zinc-900 dark:text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.9),0_8px_32px_rgba(0,0,0,0.08)] dark:shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-2xl transition-all duration-300 hover:bg-white/40 dark:hover:bg-white/10 hover:border-white/70 dark:hover:border-white/30",
         "dark:[box-shadow:0_-20px_80px_-20px_rgba(250,250,250,0.12)_inset]",
-        "before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:before:left-[120%] hover:before:opacity-100"
+        "before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.8),transparent)] dark:before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:before:left-[120%] hover:before:opacity-100"
       )}
     >
       <div className="relative z-10 flex flex-row items-start gap-3">
