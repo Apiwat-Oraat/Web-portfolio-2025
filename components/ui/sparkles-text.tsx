@@ -73,7 +73,7 @@ interface SparklesTextProps {
   sparklesCount?: number
 
   /**
-   * @default "{first: '#433075', second: '#A58CF4'}"
+   * @default "{first: '#2D7FF9', second: '#3B82F6'}"
    * @type string
    * @description
    * The colors of the sparkles
@@ -86,7 +86,7 @@ interface SparklesTextProps {
 
 export const SparklesText: React.FC<SparklesTextProps> = ({
   children,
-  colors = { first: "#433075", second: "#A58CF4" },
+  colors = { first: "#2D7FF9", second: "#3B82F6" },
   className,
   sparklesCount = 10,
   ...props
@@ -130,7 +130,7 @@ export const SparklesText: React.FC<SparklesTextProps> = ({
 
   return (
     <div
-      className={cn("text-3xl md:text-5xl font-mono text-white text-center md:text-left", className)}
+      className={cn("text-3xl md:text-5xl font-bold font-sans tracking-tight text-white text-center md:text-left", className)}
       {...props}
       style={
         {

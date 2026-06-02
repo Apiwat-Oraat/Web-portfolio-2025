@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ExternalLink, MapPin, Briefcase, ChevronDown, Rocket, PenTool } from "lucide-react";
+import { ExternalLink, MapPin, Building2, Factory, Printer, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -42,8 +42,8 @@ const experiences: ExperienceItem[] = [
       "DeepStream",
       "Kotlin",
     ],
-    icon: Briefcase,
-    gradientClass: "bg-gradient-to-r from-[#FF7A59] via-[#D84C98] to-[#2E87EB]",
+    icon: Building2,
+    gradientClass: "bg-gradient-to-br from-[#020617] via-[#0F172A] to-[#1E3A8A]",
   },
   {
     position: "Production Intern",
@@ -55,8 +55,8 @@ const experiences: ExperienceItem[] = [
       "Gained hands-on experience in industrial manufacturing by assisting in the assembly of air conditioner components on the Line-V2 production line.",
     ],
     technologies: ["Manufacturing", "Production Line"],
-    icon: Rocket,
-    gradientClass: "bg-gradient-to-r from-emerald-400 to-cyan-500",
+    icon: Factory,
+    gradientClass: "bg-gradient-to-br from-[#020617] via-[#0B1B3D] to-[#1D4ED8]",
   },
   {
     position: "Graphic Design Intern",
@@ -69,8 +69,8 @@ const experiences: ExperienceItem[] = [
       "Executed print production tasks, including bookbinding and layout design.",
     ],
     technologies: ["Graphic Design", "Print Production", "Layout Design"],
-    icon: PenTool,
-    gradientClass: "bg-gradient-to-r from-amber-400 to-orange-500",
+    icon: Printer,
+    gradientClass: "bg-gradient-to-br from-[#020617] via-[#060D20] to-[#11265C]",
   },
 ];
 
@@ -114,13 +114,13 @@ export function ExperienceCard({
       {/* Timeline Marker (Desktop only) */}
       <div className="absolute left-1/2 transform -translate-x-1/2 z-20 hidden md:flex size-6 items-center justify-center">
         <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
-          <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+          <span className="size-3 rounded-full bg-gradient-to-b from-[#3B82F6] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
         </span>
       </div>
 
       {/* Card Form */}
       <div className="w-full md:w-[46%]">
-        <div className="relative overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.02] shadow-[0_0_40px_rgba(250,250,250,0.05)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_60px_rgba(250,250,250,0.1)] hover:before:left-[120%] hover:before:opacity-100">
+        <div className="relative overflow-hidden rounded-[24px] border border-white/20 bg-white/5 shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-500 before:pointer-events-none before:absolute before:inset-y-[-20%] before:left-[-70%] before:z-20 before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:-translate-y-1 hover:bg-white/10 hover:border-white/30 hover:before:left-[120%] hover:before:opacity-100">
           {/* Header part with gradient */}
           <div className={cn("p-6 relative", gradientClass)}>
             {/* External Link */}
@@ -255,7 +255,7 @@ export function ExperienceCard({
             align === "right" ? "items-start md:items-end" : "items-start"
           )}
         >
-          <span className="px-3.5 py-1 bg-[#433075]/40 border border-[#A58CF4]/20 rounded-full text-[12px] font-semibold text-[#A58CF4]">
+          <span className="px-3.5 py-1 bg-transparent border border-white/10 rounded-full text-[12px] font-semibold text-zinc-400">
             {badgeText}
           </span>
           <span className="text-[18px] font-semibold text-zinc-200 tracking-tight">
@@ -296,7 +296,7 @@ export default function ExperienceTimeline() {
               {/* Left Dot (Mobile) */}
               <div className="absolute md:hidden left-[22px] top-6 -translate-x-1/2 -translate-y-1/2 flex size-6 items-center justify-center z-10">
                 <span className="flex size-4.5 shrink-0 items-center justify-center rounded-full bg-white/10 shadow-[0_0_14px_rgba(250,250,250,0.18)]">
-                  <span className="size-3 rounded-full bg-gradient-to-b from-[#FFFFFF] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
+                  <span className="size-3 rounded-full bg-gradient-to-b from-[#3B82F6] via-[#D7D8DF] to-[#9B9CA6] shadow-[0_0_8px_rgba(255,255,255,0.3)]" />
                 </span>
               </div>
 
