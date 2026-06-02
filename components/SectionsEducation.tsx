@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from 'react'
 import TimelineSection from './TimelineSection'
 import { useInView } from 'react-intersection-observer'

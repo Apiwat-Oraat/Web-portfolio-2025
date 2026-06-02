@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from 'react'
 import ExperienceCard from './ExperienceCard'
 import { useInView } from "react-intersection-observer";

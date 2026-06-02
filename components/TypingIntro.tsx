@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState, useEffect } from 'react'
 
 interface TypingIntroProps {
@@ -44,11 +46,11 @@ function TypingIntro({
   }, [isComplete, onComplete, pauseDuration]);
   
   return (
-<div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#0D0D0D] via-[#21183A] to-[#0D0D0D] overflow-hidden">
+<div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#000000] via-[#000822] to-[#000000] overflow-hidden">
   <div className="text-center">
-    <h1 className="text-2xl font-mono text-[#FAFAFA] mb-4 drop-shadow-[0_0_30px_rgba(165,140,244,0.55)]">
+    <h1 className="text-3xl md:text-4xl font-bold font-sans tracking-tight text-[#FAFAFA] mb-4 drop-shadow-[0_0_30px_rgba(165,140,244,0.55)]">
       {displayText}
-      <span className="animate-pulse text-[#A58CF4]">|</span>
+      <span className="animate-pulse text-[#2D7FF9]">|</span>
     </h1>
   </div>
 </div>

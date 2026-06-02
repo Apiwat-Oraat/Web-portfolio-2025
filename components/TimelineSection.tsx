@@ -5,7 +5,7 @@ import nonghanlogo from "@/public/โลโก้วิทยาลัยnew-768
 export default function TimelineSection() {
   const events = [
     {
-      logo: "https://upload.wikimedia.org/wikipedia/en/a/ab/Logo_of_King_Mongkut%27s_University_of_Technology_North_Bangkok.svg",
+      logo: "/kmutnb-logo.svg",
       date: "Expected Graduation: October 2026",
       badge: "Bachelor",
       title: "King Mongkut's University of Technology North Bangkok",

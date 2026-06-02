@@ -1,19 +1,17 @@
 "use client";
 import { ShaderGradientCanvas, ShaderGradient } from 'shadergradient'
+import Spline from '@splinetool/react-spline';
 
 // Background 3D - Fixed & No Interaction
 const Background3D: React.FC = () => {
   return (
     <div className=" fixed inset-0 w-screen h-screen pointer-events-none z-0">
-      <div className="absolute inset-0 w-full h-full [&>canvas]:absolute [&>canvas]:inset-0 [&>canvas]:w-full [&>canvas]:h-full [&>canvas]:object-cover">
-        {/* <Spline scene="https://prod.spline.design/C1kX9SM3iwdfommf/scene.splinecode" /> */}
-        <ShaderGradientCanvas
-        >
+      <div className="absolute inset-0 w-full h-full pointer-events-none [&_*]:pointer-events-none [&>canvas]:absolute [&>canvas]:inset-0 [&>canvas]:w-full [&>canvas]:h-full [&>canvas]:object-cover">
+        {/* <Spline scene="https://prod.spline.design/FGafC3FGdTy0IhOY/scene.splinecode" /> */}
+        <ShaderGradientCanvas>
           <ShaderGradient
             control="query"
-            // urlString='https://shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23000000&bgColor2=%23000000&brightness=1&cAzimuthAngle=180&cDistance=2.8&cPolarAngle=80&cameraZoom=9.1&color1=%23606080&color2=%238d7dca&color3=%23212121&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=50&rotationY=0&rotationZ=-60&shader=defaults&type=waterPlane&uAmplitude=0&uDensity=1.5&uFrequency=0&uSpeed=0.3&uStrength=1.5&uTime=8&wireframe=false'
-            urlString='https://shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%230D0D0D&bgColor2=%230D0D0D&brightness=1&cAzimuthAngle=180&cDistance=2.8&cPolarAngle=80&cameraZoom=9.1&color1=%23433075&color2=%23A58CF4&color3=%230D0D0D&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=50&rotationY=0&rotationZ=-60&shader=defaults&type=waterPlane&uAmplitude=0&uDensity=1.5&uFrequency=0&uSpeed=0.3&uStrength=1.5&uTime=8&wireframe=false'
-            // urlString='https://shadergradient.co/customize?animate=on&axesHelper=off&brightness=1.5&cAzimuthAngle=254&cDistance=1.5&cPolarAngle=140&cameraZoom=12.49&color1=%23809bd6&color2=%23910aff&color3=%23af38ff&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.5&rotationX=0&rotationY=0&rotationZ=140&shader=defaults&type=sphere&uAmplitude=7&uDensity=0.8&uFrequency=5.5&uSpeed=0.3&uStrength=0.4&uTime=0&wireframe=false&zoomOut=false'
+            urlString='https://shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23000000&bgColor2=%23000000&brightness=1&cAzimuthAngle=180&cDistance=2.8&cPolarAngle=80&cameraZoom=9.1&color1=%232D7FF9&color2=%23020A1C&color3=%232563EB&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=0&positionZ=0&range=disabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=50&rotationY=0&rotationZ=-60&shader=defaults&type=waterPlane&uAmplitude=0&uDensity=1.5&uFrequency=0&uSpeed=0.3&uStrength=1.5&uTime=8&wireframe=false'
           />
         </ShaderGradientCanvas>
       </div>

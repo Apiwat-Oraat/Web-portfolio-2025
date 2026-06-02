@@ -3,7 +3,7 @@
 import dynamic from "next/dynamic";
 import {
   Blocks,
-  Cpu,
+  Server,
   PanelsTopLeft,
   Workflow,
 } from "lucide-react";
@@ -51,16 +51,16 @@ const skillGroups: SkillGroup[] = [
     icon: PanelsTopLeft,
     status: "Primary",
     time: "Core",
-    accent: "#8B5CF6",
+    accent: "#2D7FF9",
     iconClassName: "text-[#FAFAFA]",
     skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "MUI"],
   },
   {
     title: "Backend",
-    icon: Cpu,
+    icon: Server,
     status: "Building",
     time: "API",
-    accent: "#34D399",
+    accent: "#3B82F6",
     iconClassName: "text-[#FAFAFA]",
     skills: ["Node.js", "JavaScript", "Express", "JWT", "Java", "PHP"],
   },
@@ -69,7 +69,7 @@ const skillGroups: SkillGroup[] = [
     icon: Blocks,
     status: "Active",
     time: "Data",
-    accent: "#38BDF8",
+    accent: "#1D4ED8",
     iconClassName: "text-[#FAFAFA]",
     skills: ["PostgreSQL", "MySQL", "Prisma"],
   },
@@ -78,8 +78,8 @@ const skillGroups: SkillGroup[] = [
     icon: Workflow,
     status: "Daily",
     time: "Flow",
-    accent: "#D7D8DF",
-    iconClassName: "text-[#0D0D0D]",
+    accent: "#0F2A66",
+    iconClassName: "text-[#FAFAFA]",
     skills: ["Git", "GitHub", "GitLab", "Postman", "Docker", "Vercel", "DBeaver", "VS Code", "IntelliJ IDEA"],
   },
 ];
@@ -276,7 +276,7 @@ function IntelliJIcon() {
 
 function TechBadge({ label }: { label: string }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border border-[#A58CF4]/25 bg-[#433075]/25 py-1 pl-1 pr-2.5 text-[11px] font-medium text-zinc-400 transition-colors duration-300 hover:border-[#FAFAFA]/25 hover:text-[#FAFAFA]">
+    <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-transparent py-1 pl-1 pr-2.5 text-[11px] font-medium text-zinc-400 transition-colors duration-300 hover:border-[#FAFAFA]/35 hover:text-[#FAFAFA]">
       <TechIcon label={label} />
       {label}
     </span>
@@ -292,7 +292,7 @@ function SkillNotificationCard({
   return (
     <figure
       className={cn(
-        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-white/10 bg-white/5 p-3 text-[#FAFAFA] shadow-[0_0_32px_rgba(250,250,250,0.045)] backdrop-blur-md transition-colors duration-300 hover:border-[#FAFAFA]/35 hover:shadow-[0_0_48px_rgba(250,250,250,0.09)]",
+        "group/card relative mx-auto w-full cursor-pointer overflow-hidden rounded-2xl rounded-tl-md border border-white/20 bg-white/5 p-3 text-[#FAFAFA] shadow-[inset_0_1px_1px_rgba(255,255,255,0.15),0_8px_32px_rgba(0,0,0,0.2)] backdrop-blur-xl transition-all duration-300 hover:bg-white/10 hover:border-white/30",
         "dark:[box-shadow:0_-20px_80px_-20px_rgba(250,250,250,0.12)_inset]",
         "before:absolute before:inset-y-[-20%] before:left-[-70%] before:w-1/2 before:rotate-12 before:bg-[linear-gradient(90deg,transparent,rgba(250,250,250,0.42),transparent)] before:opacity-0 before:blur-sm before:transition-all before:duration-700 hover:before:left-[120%] hover:before:opacity-100"
       )}
@@ -312,7 +312,7 @@ function SkillNotificationCard({
           <figcaption className="flex flex-wrap items-center gap-x-2 gap-y-1 font-medium text-[#FAFAFA]">
             <span className="text-sm">{group.title}</span>
             <span className="text-[11px] text-zinc-500">{group.time}</span>
-            <span className="ml-auto rounded-full border border-[#A58CF4]/25 bg-[#433075]/30 px-2 py-0.5 text-[10px] font-medium text-[#A58CF4]">
+            <span className="ml-auto rounded-full border border-white/10 bg-transparent px-2 py-0.5 text-[10px] font-medium text-zinc-400">
               {group.status}
             </span>
           </figcaption>

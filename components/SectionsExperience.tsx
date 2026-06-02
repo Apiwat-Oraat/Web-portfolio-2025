@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect } from "react";
 import ExperienceTimeline from "./ExperienceTimeline";
 import { useInView } from "react-intersection-observer";
