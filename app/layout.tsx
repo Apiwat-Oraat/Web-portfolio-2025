@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "portfolio-apiwat",
   description: "Web profile",
+  icons: {
+    icon: "/logo.png",
+  },
 };
 
 export default function RootLayout({
