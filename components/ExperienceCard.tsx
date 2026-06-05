@@ -94,6 +94,7 @@ export default function ExperienceCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View ${position} project on GitHub`}
             className="flex items-center gap-2 border border-[#2D7FF9]/35 text-zinc-700 dark:text-zinc-200
                  hover:text-[#2D7FF9] hover:border-[#2D7FF9] px-3.5 py-1.5 rounded-full
                  text-xs md:text-sm transition-all duration-300 w-fit mt-2

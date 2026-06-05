@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -36,6 +37,7 @@ export default function EventSection() {
 
         <a
           href="#"
+          aria-label="Learn more about Creative Conference 2025"
           className="inline-flex items-center gap-2 text-sm font-medium 
                      text-zinc-200 border border-[#2D7FF9]/35 rounded-full px-5 py-2.5
                      hover:text-[#2D7FF9] hover:border-[#2D7FF9] transition-all duration-300"
