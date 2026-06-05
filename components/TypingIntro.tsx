@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 interface TypingIntroProps {
   onComplete?: () => void;
@@ -12,49 +12,45 @@ interface TypingIntroProps {
 // Typing Intro Component
 function TypingIntro({ 
   onComplete, 
-  text = 'Welcome to Our Website',
+  text = 'Building Something Amazing...',
   typingSpeed = 100,
   pauseDuration = 1000
 }: TypingIntroProps) {
-  const [displayText, setDisplayText] = useState<string>('');
-  const [isComplete, setIsComplete] = useState<boolean>(false);
   
+  const textLength = text.length;
+  // CSS animation duration in seconds
+  const typingDuration = (textLength * typingSpeed) / 1000;
+
   useEffect(() => {
-    let currentIndex = 0;
-    
-    const typingInterval = setInterval(() => {
-      if (currentIndex <= text.length) {
-        setDisplayText(text.slice(0, currentIndex));
-        currentIndex++;
-      } else {
-        clearInterval(typingInterval);
-        setIsComplete(true);
-      }
-    }, typingSpeed);
-    
-    return () => clearInterval(typingInterval);
-  }, [text, typingSpeed]);
-  
-  useEffect(() => {
-    if (isComplete && onComplete) {
+    if (onComplete) {
+      // Wait for typing animation to finish + pauseDuration
       const timer = setTimeout(() => {
         onComplete();
-      }, pauseDuration);
+      }, (typingDuration * 1000) + pauseDuration);
       
       return () => clearTimeout(timer);
     }
-  }, [isComplete, onComplete, pauseDuration]);
-  
-  return (
-<div className="fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-[#f7f7fa] via-[#e2e8f0] to-[#f7f7fa] dark:from-[#000000] dark:via-[#000822] dark:to-[#000000] overflow-hidden transition-colors duration-500">
-  <div className="text-center">
-    <h1 className="text-3xl md:text-4xl font-bold font-sans tracking-tight text-zinc-900 dark:text-[#FAFAFA] mb-4 drop-shadow-[0_0_30px_rgba(45,127,249,0.3)] dark:drop-shadow-[0_0_30px_rgba(165,140,244,0.55)] transition-colors duration-500">
-      {displayText}
-      <span className="animate-pulse text-[#2D7FF9]">|</span>
-    </h1>
-  </div>
-</div>
+  }, [onComplete, typingDuration, pauseDuration]);
 
+  return (
+    <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-to-br from-[#f7f7fa] via-[#e2e8f0] to-[#f7f7fa] dark:from-[#000000] dark:via-[#000822] dark:to-[#000000] overflow-hidden transition-colors duration-500">
+      <div className="flex items-center justify-center mb-5 drop-shadow-[0_0_8px_rgba(45,127,249,0.15)]">
+        <div 
+          className="text-[16px] md:text-[20px] font-mono font-medium tracking-widest text-zinc-600 dark:text-zinc-300 transition-colors duration-500 whitespace-nowrap"
+          style={{
+            clipPath: 'inset(0 100% 0 0)',
+            animation: `typing-mask ${typingDuration}s steps(${textLength}, end) forwards`
+          }}
+        >
+          {text}
+        </div>
+        <span className="text-[16px] md:text-[20px] font-mono animate-blink-cursor ml-0.5 text-[#2D7FF9] opacity-80">|</span>
+      </div>
+
+      <div className="w-[180px] md:w-[240px] h-[2px] bg-zinc-300/50 dark:bg-zinc-800/50 rounded-full relative overflow-hidden transition-colors duration-500">
+        <div className="w-[30%] h-full bg-[#2D7FF9] shadow-[0_0_10px_#2D7FF9] animate-loading-bar rounded-full"></div>
+      </div>
+    </div>
   );
 }
 
